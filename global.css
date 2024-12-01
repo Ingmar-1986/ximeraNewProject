@@ -1,0 +1,411 @@
+:root {
+--definition-red: 0;
+--definition-green: 255;
+--definition-blue: 0;
+
+--definition-background-perc: 0.05;
+--definition-border-perc: 0.45;
+
+--notation-background-perc: 0.05;
+--notation-border-perc: 0.45;
+
+--axiom-background-perc: 0.05;
+--axiom-border-perc: 0.45;
+
+--proposition-background-perc: 0.02;
+--proposition-border-perc: 0.65;
+
+--theorem-background-perc: 0.02;
+--theorem-border-perc: 0.65;
+
+--algorithm-background-perc: 0.02;
+--algorithm-border-perc: 0.65;
+
+--proof-background-perc: 0.00;
+--proof-border-perc: 0.2;
+
+--explanation-background-perc: 0.01;
+--explanation-border-perc: 0.75;
+
+--example-red: 0;
+--example-green: 0;
+--example-blue: 255;
+
+--example-background-perc: 0.05;
+--example-border-perc: 0.75;
+
+--exercise-background-perc: 0.00;
+--exercise-border-perc: 0.50;
+
+--remark-red: 255;
+--remark-green: 255;
+--remark-blue: 0;
+
+--remark-background-perc: 0.05;
+--remark-border-perc: 0.75;
+
+--warning-background-perc: 0.02;
+--warning-border-perc: 0.65;
+}
+
+/*
+Simpelste vorm
+	
+	.definition {    
+		background-color: rgb(r,g,b);
+		border: 1px solid rgb(r,g,b);
+		border-left: 12px solid rgb(r,g,b);
+	}
+
+*/
+
+/*
+
+Zet voor alle theorems de kleuren van de box'en juist
+
+*/
+.definition {
+    --pba: var(--definition-background-perc);
+    --pbo: var(--definition-border-perc);
+    --r: var(--definition-red);
+    --g: var(--definition-green);
+    --b: var(--definition-blue);
+    
+	--background-color: rgb(
+		calc((1 - var(--pba)) * 255 + var(--pba) * var(--r)),
+		calc((1 - var(--pba)) * 255 + var(--pba) * var(--g)),
+		calc((1 - var(--pba)) * 255 + var(--pba) * var(--b))
+	);
+	
+	--border-color: rgb(
+		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--r)),
+		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--g)),
+		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--b))
+	);	
+	
+	background-color: var(--background-color);
+	border: 1px solid var(--border-color);
+	border-left: 12px solid var(--border-color);
+}
+
+.notation {
+	--pba: var(--notation-background-perc);
+	--pbo: var(--notation-border-perc);
+	--r: var(--definition-red);
+	--g: var(--definition-green);
+	--b: var(--definition-blue);
+	
+	--background-color: rgb(
+		calc((1 - var(--pba)) * 255 + var(--pba) * var(--r)),
+		calc((1 - var(--pba)) * 255 + var(--pba) * var(--g)),
+		calc((1 - var(--pba)) * 255 + var(--pba) * var(--b))
+	);
+	
+	--border-color: rgb(
+		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--r)),
+		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--g)),
+		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--b))
+	);	
+	
+	background-color: var(--background-color);
+	border: 1px solid var(--border-color);
+	border-left: 12px solid var(--border-color);
+}
+
+.axiom {
+    --pba: var(--axiom-background-perc);
+    --pbo: var(--axiom-border-perc);
+    --r: var(--definition-red);
+    --g: var(--definition-green);
+    --b: var(--definition-blue);
+    
+	--background-color: rgb(
+		calc((1 - var(--pba)) * 255 + var(--pba) * var(--r)),
+		calc((1 - var(--pba)) * 255 + var(--pba) * var(--g)),
+		calc((1 - var(--pba)) * 255 + var(--pba) * var(--b))
+	);
+	
+	--border-color: rgb(
+		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--r)),
+		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--g)),
+		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--b))
+	);	
+	
+	background-color: var(--background-color);
+	border: 1px solid var(--border-color);
+	border-left: 12px solid var(--border-color);
+}
+
+.proposition {
+	--pba: var(--proposition-background-perc);
+	--pbo: var(--proposition-border-perc);
+	--r: var(--definition-red);
+	--g: var(--definition-green);
+	--b: var(--definition-blue);
+	
+	--background-color: rgb(
+		calc((1 - var(--pba)) * 255 + var(--pba) * var(--r)),
+		calc((1 - var(--pba)) * 255 + var(--pba) * var(--g)),
+		calc((1 - var(--pba)) * 255 + var(--pba) * var(--b))
+	);
+	
+	--border-color: rgb(
+		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--r)),
+		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--g)),
+		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--b))
+	);	
+	
+	background-color: var(--background-color);
+	border: 1px solid var(--border-color);
+	border-left: 12px solid var(--border-color);
+}
+
+.theorem {
+    --pba: var(--theorem-background-perc);
+    --pbo: var(--theorem-border-perc);
+    --r: var(--definition-red);
+    --g: var(--definition-green);
+    --b: var(--definition-blue);
+    
+	--background-color: rgb(
+		calc((1 - var(--pba)) * 255 + var(--pba) * var(--r)),
+		calc((1 - var(--pba)) * 255 + var(--pba) * var(--g)),
+		calc((1 - var(--pba)) * 255 + var(--pba) * var(--b))
+	);
+	
+	--border-color: rgb(
+		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--r)),
+		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--g)),
+		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--b))
+	);	
+	
+	background-color: var(--background-color);
+	border: 1px solid var(--border-color);
+	border-left: 12px solid var(--border-color);
+}
+.algorithm {
+    --pba: var(--algorithm-background-perc);
+    --pbo: var(--algorithm-border-perc);
+    --r: var(--definition-red);
+    --g: var(--definition-green);
+    --b: var(--definition-blue);
+    
+	--background-color: rgb(
+		calc((1 - var(--pba)) * 255 + var(--pba) * var(--r)),
+		calc((1 - var(--pba)) * 255 + var(--pba) * var(--g)),
+		calc((1 - var(--pba)) * 255 + var(--pba) * var(--b))
+	);
+	
+	--border-color: rgb(
+		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--r)),
+		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--g)),
+		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--b))
+	);	
+	
+	background-color: var(--background-color);
+	border: 1px solid var(--border-color);
+	border-left: 12px solid var(--border-color);
+}
+
+.proof {
+    --pba: var(--proof-background-perc);
+    --pbo: var(--proof-border-perc);
+    --r: var(--definition-red);
+    --g: var(--definition-green);
+    --b: var(--definition-blue);
+    
+	--background-color: rgb(
+		calc((1 - var(--pba)) * 255 + var(--pba) * var(--r)),
+		calc((1 - var(--pba)) * 255 + var(--pba) * var(--g)),
+		calc((1 - var(--pba)) * 255 + var(--pba) * var(--b))
+	);
+	
+	--border-color: rgb(
+		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--r)),
+		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--g)),
+		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--b))
+	);	
+	
+	background-color: var(--background-color);
+	border: 1px solid var(--border-color);
+	border-left: 12px solid var(--border-color);
+
+}
+
+.explanation {
+    --pba: var(--explanation-background-perc);
+    --pbo: var(--explanation-border-perc);
+    --r: var(--definition-red);
+    --g: var(--definition-green);
+    --b: var(--definition-blue);
+    
+	--background-color: rgb(
+		calc((1 - var(--pba)) * 255 + var(--pba) * var(--r)),
+		calc((1 - var(--pba)) * 255 + var(--pba) * var(--g)),
+		calc((1 - var(--pba)) * 255 + var(--pba) * var(--b))
+	);
+	
+	--border-color: rgb(
+		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--r)),
+		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--g)),
+		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--b))
+	);	
+	
+	background-color: var(--background-color);
+	border: 1px solid var(--border-color);
+	border-left: 12px solid var(--border-color);
+}
+
+.example {
+    --pba: var(--example-background-perc);
+    --pbo: var(--example-border-perc);
+    --r: var(--example-red);
+    --g: var(--example-green);
+    --b: var(--example-blue);
+    
+	--background-color: rgb(
+		calc((1 - var(--pba)) * 255 + var(--pba) * var(--r)),
+		calc((1 - var(--pba)) * 255 + var(--pba) * var(--g)),
+		calc((1 - var(--pba)) * 255 + var(--pba) * var(--b))
+	);
+	
+	--border-color: rgb(
+		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--r)),
+		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--g)),
+		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--b))
+	);	
+	
+	background-color: var(--background-color);
+	border: 1px solid var(--border-color);
+	border-left: 12px solid var(--border-color);
+}
+
+.exercise {
+    --pba: var(--exercise-background-perc);
+    --pbo: var(--exercise-border-perc);
+    --r: var(--example-red);
+    --g: var(--example-green);
+    --b: var(--example-blue);
+    
+	--background-color: rgb(
+		calc((1 - var(--pba)) * 255 + var(--pba) * var(--r)),
+		calc((1 - var(--pba)) * 255 + var(--pba) * var(--g)),
+		calc((1 - var(--pba)) * 255 + var(--pba) * var(--b))
+	);
+	
+	--border-color: rgb(
+		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--r)),
+		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--g)),
+		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--b))
+	);	
+	
+	background-color: var(--background-color);
+	border: 1px solid var(--border-color);
+	border-left: 12px solid var(--border-color);
+}
+
+.remark {
+    --pba: var(--remark-background-perc);
+    --pbo: var(--remark-border-perc);
+    --r: var(--remark-red);
+    --g: var(--remark-green);
+    --b: var(--remark-blue);
+    
+	--background-color: rgb(
+		calc((1 - var(--pba)) * 255 + var(--pba) * var(--r)),
+		calc((1 - var(--pba)) * 255 + var(--pba) * var(--g)),
+		calc((1 - var(--pba)) * 255 + var(--pba) * var(--b))
+	);
+	
+	--border-color: rgb(
+		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--r)),
+		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--g)),
+		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--b))
+	);	
+	
+	background-color: var(--background-color);
+	border: 1px solid var(--border-color);
+	border-left: 12px solid var(--border-color);
+}
+
+.warning {
+	--pba: var(--warning-background-perc);
+	--pbo: var(--warning-border-perc);
+	--r: var(--remark-red);
+	--g: var(--remark-green);
+	--b: var(--remark-blue);
+	
+	--background-color: rgb(
+	calc((1 - var(--pba)) * 255 + var(--pba) * var(--r)),
+	calc((1 - var(--pba)) * 255 + var(--pba) * var(--g)),
+	calc((1 - var(--pba)) * 255 + var(--pba) * var(--b))
+	);
+	
+	--border-color: rgb(
+	calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--r)),
+	calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--g)),
+	calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--b))
+	);	
+	
+	background-color: var(--background-color);
+	border: 1px solid var(--border-color);
+	border-left: 12px solid var(--border-color);
+}
+
+/*
+Fix proof spacing
+*/
+
+.proof{
+	padding-left: 12px;
+    padding-right: 24px;
+    margin-top: 12pt;
+    padding-top: 6pt;
+    padding-bottom: 12pt;
+}
+
+.theorem::before {
+  content: "stelling" attr(numbered) ".";
+}
+
+.corollary::before {
+  content: "gevolg" attr(numbered) ".";
+}
+
+[data-feedback="solution"]::before {
+    content: "Uitwerking: ";
+}
+.card.activity-card.section{
+    background-color: #002eff33;
+}
+div.d-flex div.d-flex{
+    min-width: 100%;
+}
+span.fbox {
+    border: 1px solid black;
+}
+
+/* poor-mans tabular for \begin{description} */
+dt.description {
+    min-width: 10em;
+}
+
+/* try to make tabular not full-width by default ...  */
+div.tabular {
+    /* width: fit-content; */
+    max-width: max-content;
+}
+
+table.tabular td {
+  padding: 0 15px;
+  }
+
+/* limit width central panel */
+main.activity {
+    max-width: 120ch;
+}
+
+/* correct layout of footer */
+footer .page-link {
+    padding: 0;
+}
