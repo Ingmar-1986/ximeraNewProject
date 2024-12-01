@@ -1,6 +1,6 @@
 :root {
-	--definition-red: 0;
-	--definition-green: 255;
+	--definition-red: 255;
+	--definition-green: 0;
 	--definition-blue: 0;
 	
 	--definition-background-perc: 0.05;
@@ -64,22 +64,22 @@
 	}
 	
 	.ui-state-hover,.ui-widget-content .ui-state-hover,.ui-widget-header .ui-state-hover,.ui-state-focus,.ui-widget-content .ui-state-focus,.ui-widget-header .ui-state-focus,.ui-button:hover,.ui-button:focus{
-		background: #dadada;
-		font-weight:normal;color:#212121
+		background: #fe0303;
+		font-weight:normal;color:#e5fe02
 	  }
 	
 	  .ui-state-default,.ui-widget-content .ui-state-default,.ui-widget-header .ui-state-default,.ui-button,html .ui-button.ui-state-disabled:hover,html .ui-button.ui-state-disabled:active{
-		border:1px solid #d3d3d3;
-		background:#e6e6e6; /*  url("https://sagecell.sagemath.org/static/images/ui-bg_glass_75_e6e6e6_1x400.png") 	50% 50% repeat-x; */
+		border:1px solid #05adfb;
+		background:#07e16d; /*  url("https://sagecell.sagemath.org/static/images/ui-bg_glass_75_e6e6e6_1x400.png") 	50% 50% repeat-x; */
 		font-weight:normal;
-		color:#555
+		color:#9e15b0
 	}
 	
 	.ui-state-active,.ui-widget-content .ui-state-active,.ui-widget-header .ui-state-active,a.ui-button:active,.ui-button:active,.ui-button.ui-state-active:hover{
-		border:1px solid #aaa;
-		background:#fff ;
+		border:1px solid #a15c91;
+		background:#ccf236 ;
 		font-weight:normal;
-		color:#212121
+		color:#ee270d
 	}
 	
 	/* zet defaults voor accordion; 
