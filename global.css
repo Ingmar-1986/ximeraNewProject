@@ -30,9 +30,9 @@
 	--explanation-background-perc: 0.01;
 	--explanation-border-perc: 0.75;
 	
-	--example-red: 29;
+	--example-red: 0
 	--example-green: 141;
-	--example-blue: 176;
+	--example-blue: 0;
 	
 	--example-background-perc: 0.1;
 	--example-border-perc: 1;
@@ -612,14 +612,14 @@
 	}
 	
 	.btn-info {
-		background-color: #1D8DB0;   /* KULeuven-mid */
+		background-color: #e5f906;   /* KULeuven-mid */
 		/* background-color: #1FABD5;   /* KULeuven-light */
 		/* background-color: #116E8A;   /* KULeuven-dark */
 	}
 	
 	.btn-primary {
-		background-color: #1D8DB0;   /* KULeuven-mid */
-		border: #1D8DB0;   /* KULeuven-mid */
+		background-color: #1db042;   /* KULeuven-mid */
+		border: #b01d22;   /* KULeuven-mid */
 	}
 	
 	.btn-primary.disabled, .btn-primary:disabled {
