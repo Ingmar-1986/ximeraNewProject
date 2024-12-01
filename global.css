@@ -510,8 +510,8 @@
 	
 	/* black border round 'oplossing' */
 	.feedback[data-feedback="solution"] {
-		border: 1px solid black;
-		border-left: 3px solid black;
+		border: 1px solid rgb(247, 3, 3);
+		border-left: 3px solid rgb(0, 0, 0);
 		padding: 5px;
 	}
 	
