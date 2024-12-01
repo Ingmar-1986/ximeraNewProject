@@ -1,5 +1,14 @@
 \documentclass{xourse}
+\def\isXourse{true}
+%\pdfOnly{\providecommand\showtodonotes{}}
 \input{preamble.tex}
+%\input{preambles/experimental.tex}
+
+\providecommand{\xmlogo}{x}
+
+\iftikzexport\else\usepackage{printstyle}\fi
+
+
 
 \title{Dit is een test}
 \author{ingmar}
@@ -13,5 +22,6 @@
 \part{First part}
 
 \activity{./newActivity.tex}
+
 
 \end{document}
