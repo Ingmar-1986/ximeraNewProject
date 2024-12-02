@@ -1,0 +1,203 @@
+\documentclass{ximera}
+\input{../Preamble_totaal}
+\addPrintStyle{..}
+
+
+
+
+\begin{document}
+    \author{Ingmar Herreman}
+    \date{Januari 2024}
+    \xmtitle{\fys{De eenvoudigste triller}}{Een massa-veer systeem}
+  
+\doel{F48}
+    
+\xmsection{Een massa-veer systeem}
+We bestuderen de harmonische trilling in zijn eenvoudigste vorm. We maken een massa vast aan een veer.
+
+In het evenwichtspunt (EP) is de het massa-veersysteem niet uitgerekt en blijft de massa in rust. Als je de massa uit haar evenwichtspunt brengt en loslaat, voert ze trilling uit rond het evenwichtspunt. Ze beweegt nu steeds op en neer tussen 2 uiterste standen aan beide kanten van de evenwichtsstand.
+\begin{center}
+\begin{tikzpicture}
+  \def\SpringNaturalLength{4cm}%
+  \def\xMax{10}%
+  \pgfmathdeclarefunction{wave}{1}{%
+    \pgfmathparse{\SpringNaturalLength*(1+.5*cos(\x*40))}}
+  \filldraw[gray,pattern=north east lines] (0,0) -| (\xMax,.2) -| (0,0);
+  \foreach \x in {0,0.75,...,\xMax}{%
+    \draw[Spring] (\x,0) -- node[at end,fill=red,circle] {} (\x,{-wave(\x)});}
+\end{tikzpicture}
+\end{center}
+Wanneer we nu, van het massa-veersysteem, de uitwijking $x$ t.o.v. het evenwichtspunt uitzetten in functie van de tijd $t$, dan construeren we een x(t)x(t)-grafiek.
+
+            \begin{center}
+                \includegraphics{Fysica/Trillingen/Veer_sinus}
+            \end{center}
+
+We zien dat de de $x(t)$-grafiek van een trillend massa-veersysteem de vorm heeft van een sinusfunctie. We hebben dus te maken met een harmonische trilling.
+
+\xmsection{De trillings- of bewegingsvergelijking}
+Rekening houdende met de algemene vorm van een sinusfunctie kunnen we de uitwijking $x(t)$ van een harmonische trillend voorwerp wiskundige beschrijven met de onderstaande formule
+\begin{definition}{Trillingsvergelijking of bewegingsvergelijking van een harmonische trilling}
+\begin{center}
+    \important{x(t)=A\sin(\omega \cdot t+\varphi_0)}
+\end{center}
+\end{definition}
+
+Hiermee kan je op elk tijdstip berekenen waar het trillend voorwerp zich ten opzichte van de evenwichtstand bevindt.
+\begin{description}
+\item[De uitwijking of elongatie $x(t)$] ten opzichte van het evenwichtspunt op ieder moment.
+\begin{center}
+    \begin{tikzpicture}
+
+\begin{axis}[restrict y to domain=-20:1000,
+            ylabel={$x(m)$},
+            xlabel={$t(s)$},
+            %axis equal image=true,
+            grid,
+            grid style={gray!50},
+            grid=both,
+        axis y line=center,
+        axis x line=middle, 
+        axis on top=true,
+        xmin=-1,
+        xmax=10,
+        ymin=-1.1,
+        ymax=1.1,
+        ytick={\empty},
+        xtick={\empty},
+        x=1cm,y=2 cm]
+    
+     \addplot[blue,ultra thick,samples=500,smooth,domain=-5:10] {sin(deg(x))}; 
+     \draw[blue,fill=blue] (axis cs: 0.5,{sin(deg(0.5)}) circle (0.5 mm);
+     \draw[black,dotted] (axis cs: 0.5,{sin(deg(0.5)} )  -- (axis cs: 0.5,0) node[below] {$t_1$};
+    \draw[black,dotted] (axis cs: 0.5,{sin(deg(0.5)} )  -- (axis cs: 0,{sin(deg(0.5)}) node[left] {$x(t_1)$};
+
+    \draw[blue,fill=blue] (axis cs: 4.5,{sin(deg(4.5)}) circle (0.5 mm);
+     \draw[black,dotted] (axis cs: 4.5,{sin(deg(4.5)} )  -- (axis cs: 4.5,0) node[below] {$t_2$};
+    \draw[black,dotted] (axis cs: 4.5,{sin(deg(4.5)} )  -- (axis cs: 0,{sin(deg(4.5)}) node[left] {$x(t_2)$};
+
+        \draw[blue,fill=blue] (axis cs: 5.5,{sin(deg(5.5)}) circle (0.5 mm);
+     \draw[black,dotted] (axis cs: 5.5,{sin(deg(5.5)} )  -- (axis cs: 5.5,0) node[below] {$t_3$};
+    \draw[black,dotted] (axis cs: 5.5,{sin(deg(5.5)} )  -- (axis cs: 0,{sin(deg(5.5)}) node[left] {$x(t_3)$};
+     
+     
+    
+     
+     
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\item [De amplitude $A$] stelt de maximale uitwijking van de trilling voor. De amplitude is altijd positief.
+\begin{center}
+    \begin{tikzpicture}
+
+\begin{axis}[restrict y to domain=-20:1000,
+            ylabel={$x(m)$},
+            xlabel={$t(s)$},
+            title={\fbox{Invloed van de amplitude}},
+            %axis equal image=true,
+            grid,
+            grid style={gray!50},
+            grid=both,
+        axis y line=center,
+        axis x line=middle, 
+        axis on top=true,
+        xmin=-1,
+        xmax=5,
+        ymin=-4.1,
+        ymax=4.1,
+        ytick={-4,-3,...,4},
+        xtick={\empty},
+        x=2cm,y=1 cm]
+    
+     \addplot[blue,ultra thick,samples=500,smooth,domain=-5:10] {1*sin(deg(pi*x))}; 
+      \addplot[red,ultra thick,samples=500,smooth,domain=-5:10] {2*sin(deg(pi*x))};
+       \addplot[teal,ultra thick,samples=500,smooth,domain=-5:10] {4*sin(deg(pi*x))}; 
+       \legend{$x(t)=1\cdot \sin(\pi \cdot t)$, $x(t)=2\cdot \sin(\pi \cdot t)$, $x(t)=4\cdot \sin(\pi \cdot t)$};
+     
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\item  [De pulsatie $\omega$] is niet meer of minder dan een maat voor de snelheid waarmee de trilling wordt uitgevoerd en wordt berekend met de volgende formule
+pulsatie
+\begin{center}
+    \important{\omega=\dfrac{2\pi}{T}=2\pi\cdot f}
+\end{center}
+$T$ is de periode, de tijd die nodig is voor exact één trilling. $f$ is de frequentie, het aantal trillingen per seconde.
+\begin{center}
+    \begin{tikzpicture}
+
+\begin{axis}[restrict y to domain=-20:1000,
+            ylabel={$x(m)$},
+            xlabel={$t(s)$},
+            title={\fbox{Invloed van de pulsatie $\omega=\frac{2\pi}{T}=2\pi \cdot f$}},
+            %axis equal image=true,
+            grid,
+            grid style={gray!50},
+            grid=both,
+        axis y line=center,
+        axis x line=middle, 
+        axis on top=true,
+        xmin=-0.1,
+        xmax=5,
+        ymin=-2.5,
+        ymax=2.5,
+        ytick={-4,-3,...,4},
+        xtick={\empty},
+        x=3cm,y=2 cm]
+    
+     \addplot[blue,ultra thick,samples=500,smooth,domain=-5:10] {2*sin(deg(pi*x))}; 
+      \addplot[red,ultra thick,samples=500,smooth,domain=-5:10] {2*sin(deg(2*pi*x))};
+       \addplot[teal,ultra thick,samples=500,smooth,domain=-5:10] {2*sin(deg(0.5*pi*x))}; 
+       \legend{$x(t)=2\cdot \sin(\pi \cdot t)$, $x(t)=2\sin(2\cdot \pi \cdot t)$, $x(t)=2\cdot \sin(\frac{\pi}{2} \cdot t)$};
+     
+\end{axis}
+\end{tikzpicture}
+\end{center}
+De pulsatie bepaalt hoe snel achter elkaar de uiterste standen worden ingenomen: hoe kleiner de periode, hoe groter de frequentie, hoe groter de pulsatie en hoe sneller het voorwerp tussen de uiterste standen trilt.
+
+\item[De beginfase 	$\varphi_0$] bepaalt de stand van het trillend voorwerp op $t=0\ s$. 
+Meestal kiezen we de beginfase $\varphi_0=0$. Dan bevindt het voorwerp zich op $t=0\ s$ in het evenwichtspunt ($x=0\ m$). 
+\begin{center}
+    \begin{tikzpicture}
+
+\begin{axis}[restrict y to domain=-20:1000,
+            ylabel={$x(m)$},
+            xlabel={$t(s)$},
+            title={\fbox{Invloed van de beginfase $\varphi_0$}},
+            %axis equal image=true,
+            grid,
+            grid style={gray!50},
+            grid=both,
+        axis y line=center,
+        axis x line=middle, 
+        axis on top=true,
+        xmin=-0.1,
+        xmax=5,
+        ymin=-2.5,
+        ymax=2.5,
+        ytick={-4,-3,...,4},
+        xtick={\empty},
+        x=3cm,y=2 cm]
+    
+     \addplot[blue,ultra thick,samples=500,smooth,domain=-5:10] {2*sin(deg(pi*x))}; 
+      \addplot[red,ultra thick,samples=500,smooth,domain=-5:10] {2*sin(deg(pi*x)+90)};
+       \addplot[teal,ultra thick,samples=500,smooth,domain=-5:10] {2*sin(deg(pi*x)-180)}; 
+       \legend{$x(t)=2\cdot \sin(\pi \cdot t)$, $x(t)=2\sin(\pi \cdot t+\frac{\pi}{2})$, $x(t)=2\cdot \sin(\pi \cdot t+\pi)$};
+     
+\end{axis}
+\end{tikzpicture}
+\end{center}
+Wanneer de beginfase $\varphi_0=\frac{\pi}{2}$, dan is de uitwijking van het voorwerp op $t=0\ s$maximaal ($x=A$).
+
+\item[De fase $\varphi$] is argument van de sinus. $\varphi=\omega\cdot t+\varphi_0$.
+\end{description}
+
+\section{De harmonische trilling en de cirkelbeweging}
+
+   \begin{center}
+                \includegraphics{Fysica/Trillingen/HT_ECB}
+            \end{center}
+
+
+\end{document}

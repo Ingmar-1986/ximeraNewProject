@@ -1,0 +1,383 @@
+\documentclass{ximera}
+\input{../Preamble_totaal}
+\addPrintStyle{..}
+
+
+
+
+
+\begin{document}
+    \author{Ingmar Herreman}
+    \date{Februari 2024}
+    \xmtitle{\fys{De snelheid en versnelling bij een harmonische trilling}}{}
+
+    \doel{F48}
+
+\xmsection{De snelheidsvergelijking $v(t)$}
+
+Een harmonische trillend voorwerp gaat op en neer rond het evenwichtspunt en heeft daarbij op elk $t$ een andere uitwijking $x(t)$, maar ook een andere snelheid $v(t)$.
+
+We bekijken de harmonische trilling:
+\begin{center}
+    $x(t)=A\cdot \sin(\omega \cdot t + \varphi_0)$
+\end{center}
+Uit de kinematica weten we dat de snelheid $v$ op het ogenblik $t$ gegeven wordt door:
+\begin{align*}
+    v(t)&=\dfrac{dx(t)}{dt} \\
+    &=\dfrac{d(A\cdot\sin(\omega\cdot t + \varphi_0))}{dt} \\
+    &=A\cdot \cos(\omega \cdot t + \varphi_0) \cdot \omega \\
+    &=A\cdot \omega \cos(\omega \cdot t + \varphi_0) 
+        \end{align*}
+
+We noemen dit \textbf{de snelheidsvergelijking} van een harmonische trilling. Hiermee kan je op elk tijdstip de snelheid van de triller berekenen.
+
+\begin{definition}
+[De snelheidsvergelijking] \ \\
+\begin{center}
+    \important{v(t)=A\cdot \omega \cdot \cos(\omega \cdot t + \varphi_0)}
+\end{center}
+\end{definition}
+    \begin{image}
+        \begin{tikzpicture}
+        
+    \begin{axis}[restrict y to domain=-20:1000,
+                ylabel={$x(m)$},
+                xlabel={$t(s)$},
+                %axis equal image=true,
+                grid,
+                grid style={gray!50},
+                grid=both,
+            axis y line=center,
+            axis x line=middle, 
+            axis on top=true,
+            xmin=-1,
+            xmax=10,
+            ymin=-1.1,
+            ymax=1.1,
+            ytick={\empty},
+            xtick={\empty},
+            x=1cm,y=2 cm]
+        
+        \addplot[blue,ultra thick,samples=500,smooth,domain=-5:10] {sin(deg(x))}; 
+        \draw[black,dashed] (axis cs:2*pi,1) -- (axis cs:2*pi,-1.2);
+        \draw[black,dashed] (axis cs:pi/2,1) -- (axis cs:pi/2,-1.2);
+        \draw[blue,-latex] (axis cs:10*pi/4,0) -- (axis cs:10*pi/4,1) node[midway,right]{$A$};
+        
+        
+    \end{axis}
+    \end{tikzpicture}
+\end{image}
+
+\begin{image}
+    \begin{tikzpicture}
+            
+    \begin{axis}[restrict y to domain=-20:1000,
+                ylabel={$v\left(\frac{m}{s}\right)$},
+                xlabel={$t(s)$},
+                %axis equal image=true,
+                grid,
+                grid style={gray!50},
+                grid=both,
+            axis y line=center,
+            axis x line=middle, 
+            axis on top=true,
+            xmin=-1,
+            xmax=10,
+            ymin=-1.1,
+            ymax=1.1,
+            ytick={\empty},
+            xtick={\empty},
+            x=1cm,y=2 cm]
+        
+        \addplot[teal,ultra thick,samples=500,smooth,domain=-5:10] {cos(deg(x))}; 
+        \draw[black,dashed] (axis cs:2*pi,1.2) -- (axis cs:2*pi,-1);
+        \draw[black,dashed] (axis cs:pi/2,1.2) -- (axis cs:pi/2,-1);
+        \draw[teal,-latex] (axis cs:8*pi/4,0) -- (axis cs:8*pi/4,1) node[midway,right]{$A\cdot \omega$};
+        
+        
+    \end{axis}
+    \end{tikzpicture}
+    \end{image}
+
+\begin{itemize}
+    \item De snelheid is positief als de triller naar boven beweegt en negatief wanneer hij naar onder beweegt.
+    \item De snelheid van de harmonische triller is nul in de uiterste punten, dus als de uitwijking $x(t)=-A$ of $x(t)=+A$. 
+    Dat komt omdat het voorwerp daar even stil staat om vervolgens terug te keren en in de tegengestelde zin te bewegen.
+    \item De grootte van de snelheid is maximaal als de triller door het evenwichtspunt passeert.
+
+\end{itemize}
+
+\xmsection{De versnellingsvergelijking $a(t)$}
+
+Aangezien de snelheid van een harmonische trillend voorwerp op elk tijdstip $t$ verschillend is, moet de triller een versnelling $a$ hebben. Ook deze versnelling is niet constant en hangt dus af van de tijd.
+
+We weten reeds dat de snelheid $v(t)$ van een harmonische trilling gegeven wordt door:
+\begin{center}
+    $v(t)=A\cdot \omega \cdot \cos(\omega \cdot t + \varphi_0)$
+\end{center}
+Uit de kinematica weten we dat de versnelling $a$ op het ogenblik $t$ gegeven wordt door:
+\begin{align*}
+    a(t)&=\dfrac{dv(t)}{dt} \\
+        &=\dfrac{d(A\cdot \omega \cdot \cos(\omega \cdot t + \varphi_0))}{dt} \\
+          &=-A\cdot \omega \sin(\omega \cdot t + \varphi_0)\cdot \omega \\
+          &=-A\cdot \omega^2 \sin(\omega \cdot t + \varphi_0) \\
+          &=-\omega^2 \cdot x(t)
+\end{align*}
+
+We noemen dit \textbf{de versnellingsvergelijking} van een harmonische trilling. Hiermee kan je op elk tijdstip de snelheid van de triller berekenen.
+
+\begin{definition}
+[De versnellingsvergelijking] \ \\
+\begin{center}
+    \important{a(t)=-A\cdot \omega^2\cdot \sin(\omega \cdot t + \varphi_0)=-\omega^2 \cdot x(t)}
+\end{center}
+\end{definition}
+    \begin{image}
+        \begin{tikzpicture}
+        
+    \begin{axis}[restrict y to domain=-20:1000,
+                ylabel={$x(m)$},
+                xlabel={$t(s)$},
+                %axis equal image=true,
+                grid,
+                grid style={gray!50},
+                grid=both,
+            axis y line=center,
+            axis x line=middle, 
+            axis on top=true,
+            xmin=-1,
+            xmax=10,
+            ymin=-1.1,
+            ymax=1.1,
+            ytick={\empty},
+            xtick={\empty},
+            x=1cm,y=2 cm]
+        
+        \addplot[blue,ultra thick,samples=500,smooth,domain=-5:10] {sin(deg(x))}; 
+        \draw[black,dashed] (axis cs:2*pi,1) -- (axis cs:2*pi,-1.2);
+        \draw[black,dashed] (axis cs:pi/2,1) -- (axis cs:pi/2,-1.2);
+        \draw[blue,-latex] (axis cs:10*pi/4,0) -- (axis cs:10*pi/4,1) node[midway,right]{$A$};
+        
+        
+    \end{axis}
+    \end{tikzpicture}
+\end{image}
+
+\begin{image}
+\begin{tikzpicture}
+        
+\begin{axis}[restrict y to domain=-20:1000,
+            ylabel={$a\left(\frac{m}{s^2}\right)$},
+            xlabel={$t(s)$},
+            %axis equal image=true,
+            grid,
+            grid style={gray!50},
+            grid=both,
+        axis y line=center,
+        axis x line=middle, 
+        axis on top=true,
+        xmin=-1,
+        xmax=10,
+        ymin=-1.1,
+        ymax=1.1,
+        ytick={\empty},
+        xtick={\empty},
+        x=1cm,y=2 cm]
+    
+     \addplot[red,ultra thick,samples=500,smooth,domain=-5:10] {-sin(deg(x))}; 
+     \draw[black,dashed] (axis cs:2*pi,1.2) -- (axis cs:2*pi,-1);
+     \draw[black,dashed] (axis cs:pi/2,1.2) -- (axis cs:pi/2,-1);
+     \draw[red,-latex] (axis cs:6*pi/4,0) -- (axis cs:6*pi/4,1) node[midway,right]{$A \omega^2$};
+     
+    
+\end{axis}
+\end{tikzpicture}
+\end{image}
+
+\begin{itemize}
+    \item De versnelling van de harmonische triller is nul als de snelheid maximaal is. De triller bevindt zich dan in het evenwichtspunt.
+    \item De grootte van de versnelling is maximaal als de snelheid nul is. De triller bevindt zich dan in de uiterste standen.
+\end{itemize}
+
+
+\begin{image}
+    \includegraphics{Fysica/Trillingen/HT_snelheid_versnelling}
+\end{image}
+
+\begin{image}
+    
+\begin{tikzpicture}
+        
+\begin{axis}[restrict y to domain=-20:1000,
+            ylabel={},
+            xlabel={$t(s)$},
+            %axis equal image=true,
+            grid,
+            grid style={gray!50},
+            grid=both,
+        axis y line=center,
+        axis x line=middle, 
+        axis on top=true,
+        xmin=-1,
+        xmax=5,
+        ymin=-5,
+        ymax=5,
+        ytick={\empty},
+        xtick={\empty},
+        x=2cm,y=1 cm]
+
+         \draw[gray,thin] (axis cs: -5,-4) -- (axis cs: 5,-4);
+        \draw[gray,thin] (axis cs: -5,-3) -- (axis cs: 5,-3);
+    \draw[gray,thin] (axis cs: -5,-2) -- (axis cs: 5,-2);
+    \draw[gray,thin] (axis cs: -5,-1) -- (axis cs: 5,-1);
+    \draw[gray,thin] (axis cs: -5,1) -- (axis cs: 5,1);
+    \draw[gray,thin] (axis cs: -5,2) -- (axis cs: 5,2);
+    \draw[gray,thin] (axis cs: -5,3) -- (axis cs: 5,3);
+    \draw[gray,thin] (axis cs: -5,4) -- (axis cs: 5,4);
+
+    \draw[gray,thin] (axis cs: pi/4,-5) -- (axis cs: pi/4,5);
+    \draw[gray,thin] (axis cs: 2*pi/4,-5) -- (axis cs: 2*pi/4,5);
+    \draw[gray,thin] (axis cs: 3*pi/4,-5) -- (axis cs: 3*pi/4,5);
+    \draw[gray,thin] (axis cs: 4*pi/4,-5) -- (axis cs: 4*pi/4,5);
+    \draw[gray,thin] (axis cs: 5*pi/4,-5) -- (axis cs: 5*pi/4,5);
+    \draw[gray,thin] (axis cs: 6*pi/4,-5) -- (axis cs: 6*pi/4,5);
+    \draw[gray,thin] (axis cs: -pi/4,-5) -- (axis cs: -pi/4,5);
+    
+     \addplot[blue,ultra thick,samples=500,smooth,domain=-5:10] {sin(2*deg(x))}; 
+     \addplot[teal,ultra thick,samples=500,smooth,domain=-5:10] {2*cos(2*deg(x))}; 
+     \addplot[red,ultra thick,samples=500,smooth,domain=-5:10] {-4*sin(2*deg(x))}; 
+     \legend{$x(t)$,$v(t)$,$a(t)$};
+\end{axis}
+\end{tikzpicture}
+\end{image}
+
+\xmsection{Oefeningen}
+
+\begin{exercise} \oefniv{3}  
+	Een trilling wordt beschreven door de volgende vergelijking: \\
+$x(t)=0,50\ m \cdot \sin(20,0\cdot \ \frac{1}{s}\cdot t+1)$
+
+\begin{question}
+    Maak in Geogebra de trillingsgrafiek. 
+\end{question}
+
+\begin{question}
+    Bepaal grafisch op de positie, de snelheid en de versnelling op $t=0\ s$ en $t=0,10 \ s$.
+    \begin{oplossing} \ \\
+        \begin{itemize}
+            \item   $x(0)=4,2\cdot 10^{-1} \ m$  \\
+                    $x(10)=-3,0\cdot 10^{-2} \ m$
+            \item   $v(0)=5,4\ \frac{m}{s}$  \\
+                    $v(10)=1,0\cdot 10^{1} \ \frac{m}{s}$
+            \item   $a(0)=-1,7\cdot 10^{3} \frac{m}{s^2}$  \\
+                    $a(10)=1,2\cdot 10^{1} \ \frac{m}{s^2}$
+        \end{itemize}
+    \end{oplossing}
+\end{question}
+
+\begin{question}
+    Bepaal wiskundig op de positie, de snelheid en de versnelling op $t=0\ s$ en $t=0,10 \ s$.
+    \begin{oplossing} \ \\
+        \begin{itemize}
+            \item   $x(0)=4,2\cdot 10^{-1} \ m$  \\
+                    $x(10)=-3,0\cdot 10^{-2} \ m$
+            \item   $v(t)=\dfrac{d(x(t))}{dt}=10\cdot \cos(20x+1)$ \\
+                    $v(0)=5,4\ \frac{m}{s}$  \\
+                    $v(10)=1,0\cdot 10^{1} \ \frac{m}{s}$
+            \item   $a(t)=\dfrac{d(v(t))}{dt}=-200\cdot \sin(20x+1)$
+                    $a(0)=-1,7\cdot 10^{3} \frac{m}{s^2}$  \\
+                    $a(10)=1,2\cdot 10^{1} \ \frac{m}{s^2}$
+        \end{itemize}
+    \end{oplossing}
+
+\end{question}
+
+\end{exercise}
+
+\begin{exercise} \oefniv{3}
+    Een systeem voert een harmonische trilling uit beschreven door de volgende trillingsvergelijking:  \\
+    $x(t)=0,250\cdot\sin(380\cdot t + \frac{\pi}{2})$
+    
+    \begin{question}
+        Stel de snelheidsvergelijking op.
+        \begin{oplossing}
+            $v(t)=\dfrac{x(t)}{dt}=-95,0 \cdot\cos(380\cdot t + \frac{\pi}{2})$
+        \end{oplossing}
+    \end{question}
+
+    \begin{question}
+        Hoe groot is de maximale snelheid?
+        \begin{oplossing}
+            Aangezien $-1\leq\cos x\leq 1$ is de maximale snelheid $v_{max}=9,50 \cdot 10^{1} \ \dfrac{m}{s}$
+        \end{oplossing}
+    \end{question}
+
+    \begin{question}
+        Bereken de uitwijking op $t=0,00 \ s$
+        \begin{oplossing}
+            $x(0)=2,50\cdot 10^{-1} \ m$
+        \end{oplossing}
+    \end{question}
+
+    \begin{question}
+        Wanneer is de snelheid gelijk aan nul?
+        \begin{oplossing}
+            \begin{align*}
+                &v(t)=0 \\
+                \Leftrightarrow & -95,0 \cdot\cos(380\cdot t + \frac{\pi}{2})=0 \\
+                \Leftrightarrow & \cos(380\cdot t + \frac{\pi}{2})=0 \\
+                \Leftrightarrow & 380\cdot t + \frac{\pi}{2}=\frac{\pi}{2}+k\pi & (k \in \mathbb{R}) \\
+                \Leftrightarrow & 380\cdot t =k\pi  \\
+                \Leftrightarrow & t =\dfrac{k\pi}{380} 
+            \end{align*}
+        \end{oplossing}
+    \end{question}
+\end{exercise}
+
+\begin{exercise} \oefniv{3}
+    Het eindpunt van een been van een stemvork trilt harmonisch met frequentie $440 \ Hz$ en amplitude $0,10 \ mm$.
+    \begin{question}
+        Stel de trillingsvergelijking op voor dat punt (stel de beginfase =$0$).
+        $\answer[onlinenoinput]{x(t)=0,10 \ mm \cdot \sin(880  \pi \cdot t)}$
+        \begin{oplossing}
+            $x(t)=A\cdot \sin(\omega \cdot t)$
+            \begin{itemize}
+                \item $A=0,10 \ mm$
+                \item $\omega=2\pi \cdot f=2\pi \cdot 440=880 \pi$ 
+            \end{itemize}
+            $x(t)=0,10 \ mm \cdot \sin(880  \pi \cdot t)$
+        \end{oplossing}
+    \end{question}
+
+    \begin{question}
+        Bereken de maximale snelheid en maximale versnelling voor het eindpunt.
+        \begin{oplossing}
+            \begin{itemize}
+            \item $v_{max}=2,8 \cdot 10^{3}  \frac{mm}{s}=2,8  \frac{m}{s}$
+            \item $a_{max}=7,6 \cdot 10^{5}  \frac{mm}{s^2}=7,6\cdot 10^2  \frac{m}{s^2}$
+            \end{itemize}
+        \end{oplossing}
+    \end{question}
+\end{exercise}
+
+\begin{exercise} \oefniv{3}
+    Het eindpunt van de vleugel van een insect beweegt harmonisch met frequentie $65 \ Hz$ en amplitude $3,0 \ mm$. 
+    \begin{question}
+    Bepaal de maximale snelheid en versnelling van dat punt.
+    \begin{oplossing}
+        $x(t)=A\cdot \sin(\omega \cdot t)$
+            \begin{itemize}
+                \item $A=3,0 \ mm$
+                \item $\omega=2\pi \cdot f=2\pi \cdot 65=130 \pi$ 
+            \end{itemize}
+            $x(t)=3,0 \ mm \cdot \sin(130  \pi \cdot t)$
+        \begin{itemize}
+        \item $v_{max}=1,2 \cdot 10^{3}  \frac{mm}{s}=1,2  \frac{m}{s}$
+        \item $a_{max}=5,0 \cdot 10^{5}  \frac{mm}{s^2}=5,0\cdot 10^2  \frac{m}{s^2}$
+        \end{itemize}
+    \end{oplossing}
+    \end{question}
+
+
+\end{exercise}
+\end{document}

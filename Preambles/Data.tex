@@ -1,0 +1,136 @@
+%Leerplandoelstelling bepalen
+\newcommand{\doel}[1]
+  {
+    \DTLsetseparator{;}  %csv-scheidingsteken
+    
+    \def\mydb{doel}
+    \edef\mydb{\mydb{}#1}
+    \DTLloaddb{\mydb}{../data/LPD_wiskunde2.csv} % laad csv-bestand 
+    \DTLassignfirstmatch{\mydb}{REF}{#1} % lees een rij met kolommen
+    {\REF=REF,\LPD=LPD,\OND=ONDERWERP,\OMS=OMSCHRIJVING,\NIV=BEHEERSINGSNIVEAU}
+
+    \def\nivM{M} %memoriseren index 1
+    \def\nivB{B} %begrijpen index 2
+    \def\nivT{T} %toepassen index 3
+    \def\nivA{A} %analyseren index 4
+    \def\nivE{E} %evalueren index 5
+    \def\nivC{C} %creeren index 6
+    \ifx\nivM\NIV \renewcommand{\nivcol}{gray} \renewcommand{\iniv}{1}
+    \else
+            \ifx\nivB\NIV \renewcommand{\nivcol}{blue} \renewcommand{\iniv}{2}
+            \else 
+                \ifx\nivT\NIV \renewcommand{\nivcol}{green} \renewcommand{\iniv}{3}
+                \else
+                    \ifx\nivA\NIV \renewcommand{\nivcol}{orange} \renewcommand{\iniv}{4}
+                    \else
+                        \ifx\nivE\NIV \renewcommand{\nivcol}{red} \renewcommand{\iniv}{5}
+                        \else 
+                            \ifx\nivC\NIV \renewcommand{\nivcol}{violet} \renewcommand{\iniv}{6}
+                            \else fout \fi
+                        \fi
+                    \fi
+                \fi
+            \fi 
+    \fi
+    
+
+    
+    
+    
+    
+   \begin{tikzpicture}[scale=0.25]
+        % Static part
+        \draw[draw=white,fill=violet,thick] (-45:2) -- (-45:3.5) arc(-45:0:3.5) -- (0:2) arc(0:-45:2) -- cycle ;
+        \draw[draw=white,fill=red,thick] (45:2cm)-- (45:3.5cm) arc (45:0:3.5) -- (0:2cm) arc (0:45:2);
+        \draw[draw=white,fill=orange,thick] (90:2cm)-- (90:3.5cm) arc (90:45:3.5) -- (45:2cm) arc (45:90:2);
+        \draw[draw=white,fill=green,thick] (135:2cm)-- (135:3.5cm) arc (135:90:3.5) -- (90:2cm) arc (90:135:2);
+        \draw[draw=white,fill=blue,thick] (180:2cm)-- (180:3.5cm) arc (180:135:3.5) -- (135:2cm) arc (135:180:2);
+        \draw[draw=white,fill=gray,thick] (225:2cm)-- (225:3.5cm) arc (225:180:3.5) -- (180:2cm) arc (180:225:2);
+        \draw[draw=white,fill=\nivcol,thick] ({225-(\iniv)*45}:2cm)-- ({225-(\iniv)*45}:5cm) arc ({225-(\iniv)*45}:{225-(\iniv-1)*45}:5) -- ({225-(\iniv-1)*45}:2cm) arc ({225-(\iniv-1)*45}:{225-(\iniv)*45}:2);
+        
+        % Speedometer needle
+        %\pgfmathsetmacro{\col}{ifthenelse(\NIV==T,"orange",ifthenelse(\NIV==A,"blue"))}
+        \node at (0,0) {\textcolor{\nivcol}{\huge{\textbf{\NIV}}}};
+        \node at (50,6.75) [left] {{\textbf{\LPD \ | \OND}}};
+        \node at (6,4) [below right,text width=0.80\textwidth] {\OMS};
+        \node at (-6,6.75) [right,fill=blue!25] {\Large{\textbf{DOELSTELLING}}};
+        \end{tikzpicture} \\
+        \textcolor{blue!25}{\rule{\textwidth}{3pt}} \ \\
+    % %Aanduidend dat de doelsteling werd gebruikt
+    % \DTLgetrowindex{\rowidx}{\mydb}{\dtlcolumnindex{\mydb}{REF}}{#1}%
+    % \dtlgetrow{\mydb}{\rowidx}
+    % \dtlupdateentryincurrentrow{XIMERA_USE}{Ja}
+    % \dtlupdateentryincurrentrow{XIMERA_UPDATE}{\datum}
+    % \dtlrecombine
+    % \DTLsavedb{\mydb}{LPD_wiskunde2.csv}
+  }
+
+
+
+% Oude leerplandoelen voor 6A
+
+\newcommand{\ouddoel}[1]
+  {
+    \DTLsetseparator{;}  %csv-scheidingsteken
+    
+    \def\mydb{doel}
+    \edef\mydb{\mydb{}#1}
+    \DTLloaddb{\mydb}{../data/LPD_oud.csv} % laad csv-bestand 
+    \DTLassignfirstmatch{\mydb}{REF}{#1} % lees een rij met kolommen
+    {\REF=REF,\LPD=LPD,\OND=ONDERWERP,\OMS=OMSCHRIJVING,\NIV=BEHEERSINGSNIVEAU}
+
+    \def\nivM{M} %memoriseren index 1
+    \def\nivB{B} %begrijpen index 2
+    \def\nivT{T} %toepassen index 3
+    \def\nivA{A} %analyseren index 4
+    \def\nivE{E} %evalueren index 5
+    \def\nivC{C} %creeren index 6
+    \ifx\nivM\NIV \renewcommand{\nivcol}{gray} \renewcommand{\iniv}{1}
+    \else
+            \ifx\nivB\NIV \renewcommand{\nivcol}{blue} \renewcommand{\iniv}{2}
+            \else 
+                \ifx\nivT\NIV \renewcommand{\nivcol}{green} \renewcommand{\iniv}{3}
+                \else
+                    \ifx\nivA\NIV \renewcommand{\nivcol}{orange} \renewcommand{\iniv}{4}
+                    \else
+                        \ifx\nivE\NIV \renewcommand{\nivcol}{red} \renewcommand{\iniv}{5}
+                        \else 
+                            \ifx\nivC\NIV \renewcommand{\nivcol}{violet} \renewcommand{\iniv}{6}
+                            \else fout \fi
+                        \fi
+                    \fi
+                \fi
+            \fi 
+    \fi
+    
+
+    
+    
+    
+    
+   \begin{tikzpicture}[scale=0.25]
+        % Static part
+        \draw[draw=white,fill=violet,thick] (-45:2) -- (-45:3.5) arc(-45:0:3.5) -- (0:2) arc(0:-45:2) -- cycle ;
+        \draw[draw=white,fill=red,thick] (45:2cm)-- (45:3.5cm) arc (45:0:3.5) -- (0:2cm) arc (0:45:2);
+        \draw[draw=white,fill=orange,thick] (90:2cm)-- (90:3.5cm) arc (90:45:3.5) -- (45:2cm) arc (45:90:2);
+        \draw[draw=white,fill=green,thick] (135:2cm)-- (135:3.5cm) arc (135:90:3.5) -- (90:2cm) arc (90:135:2);
+        \draw[draw=white,fill=blue,thick] (180:2cm)-- (180:3.5cm) arc (180:135:3.5) -- (135:2cm) arc (135:180:2);
+        \draw[draw=white,fill=gray,thick] (225:2cm)-- (225:3.5cm) arc (225:180:3.5) -- (180:2cm) arc (180:225:2);
+        \draw[draw=white,fill=\nivcol,thick] ({225-(\iniv)*45}:2cm)-- ({225-(\iniv)*45}:5cm) arc ({225-(\iniv)*45}:{225-(\iniv-1)*45}:5) -- ({225-(\iniv-1)*45}:2cm) arc ({225-(\iniv-1)*45}:{225-(\iniv)*45}:2);
+        
+        % Speedometer needle
+        %\pgfmathsetmacro{\col}{ifthenelse(\NIV==T,"orange",ifthenelse(\NIV==A,"blue"))}
+        \node at (0,0) {\textcolor{\nivcol}{\huge{\textbf{\NIV}}}};
+        \node at (50,6.75) [left] {{\textbf{\LPD \ | \OND}}};
+        \node at (6,4) [below right,text width=0.80\textwidth] {\OMS};
+        \node at (-6,6.75) [right,fill=red!25] {\Large{\textbf{DOELSTELLING 6A}}};
+        \end{tikzpicture} \\
+        \textcolor{blue!25}{\rule{\textwidth}{3pt}} \ \\
+    % %Aanduidend dat de doelsteling werd gebruikt
+    % \DTLgetrowindex{\rowidx}{\mydb}{\dtlcolumnindex{\mydb}{REF}}{#1}%
+    % \dtlgetrow{\mydb}{\rowidx}
+    % \dtlupdateentryincurrentrow{XIMERA_USE}{Ja}
+    % \dtlupdateentryincurrentrow{XIMERA_UPDATE}{\datum}
+    % \dtlrecombine
+    % \DTLsavedb{\mydb}{LPD_wiskunde2.csv}
+  }

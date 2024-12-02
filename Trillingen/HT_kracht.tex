@@ -1,0 +1,124 @@
+\documentclass{ximera}
+\input{../Preamble_totaal}
+\addPrintStyle{..}
+
+
+
+
+
+\begin{document}
+    \author{Ingmar Herreman}
+    \date{Februari 2024}
+    \xmtitle{\fys{De kracht van een harmonisch trillend systeem}}{}
+
+\doel{F48}
+
+\xmsection{De kracht op een massa-veersysteem}
+
+Volgens de tweede wet van Newton geldt voor de resulterende kracht op een systeem:
+\begin{center}
+    $\vec{F}=m\cdot \vec{a}$
+\end{center}
+
+Voor een harmonische trilling krijgen we dus
+\begin{center}
+    $F_x=F=m\cdot a_x=-m\omega^2 x(t)$
+\end{center}
+
+De constante $m\cdot \omega^2$ noemt men de trillings – of elasticiteitsconstante $k$
+
+\begin{definition}
+    [De elasticiteitsconstante] \ \\
+    \begin{center}
+        \important{k=m\cdot w^2}
+    \end{center}
+    
+\end{definition}
+\begin{remark}
+ Soms gebruikt men ook wel eens $\epsilon$ als symbool voor de elasticiteitsconstante.
+\end{remark}
+
+\begin{definition}
+    [Kracht harmonisch trillend systeem] \ \\
+    \begin{center}
+        \important{F=-k\cdot x(t)}
+    \end{center}
+\end{definition}
+
+\begin{remark}
+    Deze formule is niets anders dan \textbf{de wet van Hooke} die jullie in de tweede graad bestudeerden.
+\end{remark}
+
+\begin{itemize}
+    \item De kracht is tegengesteld aan de uitwijking (min-teken) en wijst dus altijd naar het evenwichtspunt: de kracht is \textbf{een terugroepkracht}
+    \item De terugroepkracht is op elk moment recht evenredig met de uitwijking. Hoe groter de uitwijking, hoe groter de kracht. Zo’n kracht noemen we \textbf{de elastische kracht}
+
+\end{itemize}
+
+\begin{image}[0.5\textwidth]
+    \includegraphics{Fysica/Trillingen/veer_kracht}
+\end{image}
+
+\xmsection{De eigenfrequentie van harmonische trilling}
+\xmsubsection{De eigenfrequentie}
+
+Iedere harmonische triller heeft een eigen, vaste natuurlijke periode die typisch is voor dat systeem. Iedere triller heeft dus ook een typische frequentie waarmee het trilt. Want frequentie en periode zijn elkaars omgekeerde.
+
+De typische frequentie waarmee een voorwerp of systeem trilt noemen we \textbf{de eigenfrequentie van dat systeem}.
+
+\xmsubsection{De eigenfrequentie van een massa-veersysteem}
+\begin{example}\oefniv{2}
+Welke factoren, denk je, zouden een invloed kunnen hebben op de periode, de tijd die een massa aan een veer nodig heeft om één trilling uit te voeren?
+\end{example}
+
+Uit $k=m\cdot \omega^2$  en $\omega=2\pi\cdot f$ volgt
+\begin{align*}
+    &k=m\cdot(2\pi\cdot f)^2 \\
+    \Leftrightarrow & f=\dfrac{1}{2\pi}\cdot \sqrt{\dfrac{k}{m}}
+\end{align*}
+
+\begin{definition}
+    [Eigenfrequentie van een massa-veersysteem]  \ \\
+    \begin{center}
+        \important{f=\dfrac{1}{2\pi}\cdot \sqrt{\dfrac{k}{m}}}
+    \end{center}
+\end{definition}
+
+De eigenfrequentie waarmee een systeem trilt, hangt af van de massa van het trillend systeem en van de elasticiteitsconstante k. Hoe groter de elasticiteitsconstante k, hoe groter de eigenfrequentie  van de trilling. Hoe groter de massa, hoe kleiner de frequentie.
+
+\begin{example}[Een gitaarsnaar] \oefniv{2}
+    Bij een sterk opgespannen snaar is de terugroepkracht groot. De elasticiteitsconstante k is dan groot. Uit de formule volgt dat de frequentie hoog is. Daarom hoor je een hogere toon als je een snaar meer opspant.
+    \begin{image}[0.5\textwidth]
+    \includegraphics{Fysica/Trillingen/gitaarsnaar}
+    \end{image}
+    
+\end{example} \oefniv{3}
+De periode van het trillend systeem is dan het omgekeerd van de eigenfrequentie.
+\begin{center}
+    \important{T=\dfrac{1}{f}=2\pi \sqrt{\dfrac{m}{k}}}
+\end{center}
+\begin{example}
+    De vering van een auto (massa auto + inzittenden is 1600 kg) bestaat uit vier veren met elk een veerconstante gelijk aan $20 \ \frac{kN}{m}$. 
+    Bereken de frequentie en de periode waarmee de auto trilt, nadat hij door een put is gereden. Neem aan dat de massa van de wagen gelijk verdeeld is over de vier veren
+    \begin{oplossing}
+        Elke veer wordt belast door een massa van $\dfrac{1600 kg}{4}=400 \ kg$. \\
+        De frequentie waarmee de wagen trilt, is \\
+        $f=\dfrac{1}{2\pi}\cdot \sqrt{\dfrac{k}{m}}=\dfrac{1}{2\pi}\cdot \sqrt{\dfrac{20\cdot 10^3 \ \frac{N}{m}}{400 \ kg}}=1,1 \ Hz$ \\ \ \\ 
+
+        De periode van de trilling is dus $T=\dfrac{1}{f}=9,1\cdot 10^{-1} \ s$
+
+    \end{oplossing}
+\end{example}
+
+\begin{example}[De massa van een astronaut] \oefniv{3} De massa van een astronaut kan in gewichtloze toestand niet bepaald worden op de ‘gewone’ manier door op de balans te gaan staan.
+Om de massa te bepalen wordt gebruik gemaakt van een stoel die op veren is gemonteerd. De astronaut nam plaats in de stoel en het geheel werd aan het trillen gebracht.
+
+\begin{image}
+    \includegraphics{Fysica/Trillingen/veermethode}
+\end{image} 
+\begin{center}
+    $f=\dfrac{1}{2\pi}\cdot \sqrt{\dfrac{k}{m}}$ \\
+    $\Leftrightarrow m=\dfrac{k}{4\pi^2\cdot f^2}$
+\end{center}
+\end{example}
+\end{document}

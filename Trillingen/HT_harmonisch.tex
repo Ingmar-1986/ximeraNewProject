@@ -1,0 +1,85 @@
+\documentclass{ximera}
+\input{../Preamble_totaal}
+\addPrintStyle{..}
+
+
+
+
+
+\begin{document}
+    \author{Ingmar Herreman}
+    \date{Januari 2024}
+    \xmtitle{\fys{De harmonische trilling}}{}
+
+    \doel{F43}
+    
+\xmsection{Experiment - Een massa aan een veer}    \begin{description} 
+        \item[Experiment] Neem een veer en een massa. Hang de massa voorzichtig aan de veer. De massa hangt stil in het evenwichtspunt. 
+        Trek de massa uit evenwicht en laat hem dan los. 
+        \begin{center}
+            \begin{tikzpicture}[black!75,thick]
+                % Supporting structure
+                \fill [pattern = north west lines] (-1.5,0) rectangle ++(3,.2);
+                \draw[thick] (-1.5,0) -- ++(3,0);
+                % Spring 
+                \draw
+                [
+                    decoration={
+                        coil,
+                        aspect=0.3, 
+                        segment length=1.2mm, 
+                        amplitude=2mm, 
+                        pre length=3mm,
+                        post length=3mm},
+                    decorate
+                ] (0,0) -- ++(0,-3) 
+                    node[midway,right=0.25cm,black]{$k$}; 
+                % Mass
+                \node[draw,
+                    fill=yellow!60,
+                    minimum width=1cm,
+                    minimum height=0.75cm,
+                    anchor=north,
+                    label=east:$m$] at (0,-3) {};
+                \end{tikzpicture}
+        \end{center}
+        Wat gebeurt er met de massa?
+
+    \end{description}
+    
+\begin{definition}
+    Een trillende massa voert een continu op- en neergaande beweging uit rond het evenwichtspunt.
+\end{definition}
+
+\xmsection{Voorstelling van een trilling}
+\begin{example} \oefniv{2}
+Een dramatisch voorbeeld van een trilling is een aardbeving (een trilling van de aarde). Zo’n beving wordt geregistreerd met een seismograaf.
+
+\begin{image}[\textwidth]
+        \includegraphics{Fysica/Trillingen/seismograaf}
+        \includegraphics{Fysica/Trillingen/aardbeving}
+\end{image}
+\end{example}
+ 
+De uitwijking $x(t)$ van een trillend voorwerp is de afwijking van dat voorwerp ten opzichte van de evenwichtsstand. Deze grootheid wordt uitgedrukt in meter (m) en is op elk tijdstip $t$ anders.
+
+\xmsection{Soorten trillingen}
+\begin{description}
+    \item [Niet-periodieke trilling of ruis] 
+            \begin{center}
+        \includegraphics{Fysica/Trillingen/ruis}
+            \end{center}
+
+        \item [Periodieke trilling] bijvoorbeeld een muzieknoot 
+            \begin{center}
+        \includegraphics{Fysica/Trillingen/periodiek}
+            \end{center}
+        \item [Harmonische trilling] 
+            \begin{center}
+        \includegraphics{Fysica/Trillingen/stemvork}
+            \end{center}
+            Indien de $x\left(t\right)$-grafiek van de trilling overeenstemt met een sinus-grafiek, dan spreken we van een \textbf{harmonische trilling (HT)}. We zeggen dat de uitwijking van de trilling in de tijd een sinusoïdaal verloop vertoont. Een voorwerp dat een harmonische trilling uitvoert, noemen we een harmonische oscillator.
+\end{description}
+
+In deze cursus bespreken we enkel harmonische trillingen.
+\end{document}

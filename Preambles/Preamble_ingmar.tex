@@ -1,0 +1,140 @@
+% Extra pakketen
+
+
+
+\usepackage{fontawesome5}
+\usepackage{xcolor}
+\usepackage{physics}
+%\usepackage{siunitx}
+\usepackage{lipsum}
+%\usepackage{circuitikz}
+\usepackage{csvsimple}
+\usetikzlibrary{3d} % for canvas is
+\usetikzlibrary{decorations.pathmorphing,decorations.markings} % for random steps & snake
+\usepackage{datatool}
+\usepackage{pgffor}
+\usepackage{eurosym}
+\usepackage{algorithmic}
+\usepackage{pythontex} 
+\usepackage{xparse}
+%Extra commando's
+
+\newcommand{\datum}{\today}
+\newcommand{\nivcol}{black}
+\newcommand{\iniv}{0} % index van het beheersingsniveau
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% In plaats van grijs achtergrond, een rode achtergrond
+
+%\renewcommand{\important}[1]{\ensuremath{\fcolorbox{red}{red!50}{$#1$}}}
+
+
+% Uitbreidingwet zijn extra's die wel redelijkerwijze tot de leerstof van bv meer geavanceerde versies kunnen behoren voor de wetenschappelijke richtingen
+
+\ifdefined\isXourse
+   \ifdefined\xmuitweidingwet
+   \else
+       \def\xmnouitweidingwet{false}
+   \fi
+\fi
+
+\ifdefined\xmuitweidingwet
+\newcounter{xmuitweidingwet}  % anders error undefined ...  
+\includecomment{xmuitweidingwet}
+\else
+\newtheoremstyle{dotless}{}{}{}{}{}{}{ }{}
+\theoremstyle{dotless}
+\newtheorem*{xmuitweidingwetnofrills}{}   % nofrills = no accordion; gebruikt dus de dotless theoremstyle!
+
+\newcounter{xmuitweidingwet}
+\newenvironment{xmuitweidingwet}[1][ ]%
+{% 
+	\refstepcounter{xmuitweidingwet}
+	\begin{accordion}\begin{accordion-item}[\color{magenta}{{ $\ggg$ UITBREIDING WETENSCHAPPEN}} \arabic{xmuitweidingwet}: #1]%
+			\begin{xmuitweidingwetnofrills}%
+			}
+			{\end{xmuitweidingwetnofrills}\end{accordion-item}\end{accordion}}   
+\fi
+
+
+%uitbreiding wiskunde
+
+
+\ifdefined\isXourse
+   \ifdefined\xmuitweidingwis
+   \else
+       \def\xmnouitweidingwis{false}
+   \fi
+\fi
+
+\ifdefined\xmuitweidingwis
+\newcounter{xmuitweidingwis}  % anders error undefined ...  
+\includecomment{xmuitweidingwis}
+\else
+\newtheoremstyle{dotless}{}{}{}{}{}{}{ }{}
+\theoremstyle{dotless}
+\newtheorem*{xmuitweidingwisnofrills}{}   % nofrills = no accordion; gebruikt dus de dotless theoremstyle!
+
+\newcounter{xmuitweidingwis}
+\newenvironment{xmuitweidingwis}[1][ ]%
+{% 
+	\refstepcounter{xmuitweidingwis}
+	\begin{accordion}\begin{accordion-item}[\color{purple}{{$\infty$ UITBREIDING WISKUNDE}} \arabic{xmuitweidingwis}: #1]%
+			\begin{xmuitweidingwisnofrills}%
+			}
+			{\end{xmuitweidingwisnofrills}\end{accordion-item}\end{accordion}}   
+\fi
+
+
+% Oefening enkel voor wetenschappen en wiskunde
+
+
+\newenvironment{oefwet}[1]
+{   \textcolor{teal}{
+    $\ggg WETENSCHAPPEN$ \hrulefill \\
+        	#1 
+        	}
+}
+
+% % afbeelding vak
+\newcommand{\wis}[1]{$\infty$ #1}
+\newcommand{\wet}[1]{ #1}
+\newcommand{\fys}[1]{$\nabla$ #1}
+\newcommand{\info}[1]{$\vdots$ #1}
+
+\newcommand{\arch}[1]{$\measuredangle
+$ #1}
+
+\newcommand{\eco}[1]{\officialeuro #1}
+
+%tabel grootheid en eenheid
+% \newenvironment{eenheid}[4]
+% {
+% \renewcommand{\arraystretch}{2}
+
+%     \begin{table}[h]
+%         \centering
+%         \begin{tabular}{|c|c||c|c|}
+%         \hline
+%              \large{Grootheid} &  \large{Symbool} & \large{Eenheid} & 
+%              \large{Symbool} \\
+%              \hline \hline
+%              \cellcolor{teal!50}\textbf{\LARGE{#1}} & \cellcolor{teal!50}\textbf{\LARGE{#2}} & \cellcolor{teal!50}\textbf{\LARGE{#3}} & \cellcolor{teal!50}\textbf{\LARGE{#4}} \\
+%              \hline
+%         \end{tabular}
+%     \end{table}
+
+% \renewcommand{\arraystretch}{1}
+% }

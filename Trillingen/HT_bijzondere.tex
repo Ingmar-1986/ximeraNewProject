@@ -1,0 +1,157 @@
+\documentclass{ximera}
+\input{../Preamble_totaal}
+\addPrintStyle{..}
+
+
+
+
+
+\begin{document}
+    \author{Ingmar Herreman}
+    \date{Februari 2024}
+    \xmtitle{\fys{Bijzondere (harmonische) trillingen}}{}
+
+
+\colorlet{xcol}{blue!60!black}
+\def\tick#1#2{\draw[thick] (#1)++(#2:0.12) --++ (#2-180:0.24)}
+\def\N{100} % number of samples
+
+\xmsection{Vrije, gedempte en gedwongen trillingen}
+
+Als een voorwerp een trilling uitvoert en enkel onderhevig is aan een elastische kracht voert het voorwerp een harmonische trilling uit. We spreken van een \textbf{vrije harmonische trilling.}
+
+In realiteit wordt de amplitude van een trillend voorwerp kleiner naarmate de tijd vordert. 
+
+Dit komt omdat de wrijving met de lucht de trilling als het ware tegenwerkt. Er gaat energie verloren onder de vorm van warmte.
+\begin{center}
+    \begin{tikzpicture}
+  \def\xmax{7.0} % max x axis
+  \def\ymax{1.7}
+  \def\A{1.3}
+  \def\om{(5.3*360/(0.94*\xmax))}
+  \def\t{1800/(0.94*\xmax)}
+  \def\T{2.5}
+  
+  % AXIS
+  \draw[->,thick] (0,-\ymax) -- (0,\ymax) node[left,xcol] {$x$};
+  \draw[->,thick] (-0.2*\ymax,0) -- (\xmax,0) node[below] {$t$};
+  \tick{0,\A}{0} node[left=-1,scale=0.9] {$A_0$};
+  \tick{0,-\A}{0} node[left=-1,scale=0.9] {$-A_0$};
+  
+  % PLOT
+  \draw[dashed,samples=\N,smooth,variable=\t,domain=0:0.96*\xmax]
+    plot(\t,{\A*exp(-\t/\T)}) plot(\t,{-\A*exp(-\t/\T)});
+  \draw[red,very thick,samples=100+\N,smooth,variable=\t,domain=0:0.96*\xmax]
+    plot(\t,{\A*exp(-\t/\T)*cos(\om*\t)});  
+\end{tikzpicture}
+\end{center}
+Wanneer we deze realiteit weergeven in een $y(t)$-grafiek, dan krijgen we een sinusfunctie met demping. We noemen zo een trilling \textbf{een gedempte trilling}. De amplitude van de trilling neemt exponentieel af.
+
+Om een ongedempte trilling trilling te onderhouden, moet voortdurend energie van buiten aan het systeem toegevoegd worden. Er moet een uitwendige kracht op het systeem werken. We spreken van \textbf{de gedwongen harmonische trilling}.
+\begin{image}[0.5\textwidth]
+    \includegraphics{Fysica/Trillingen/schommel2}
+\end{image}
+Denk maar aan een schommel. Als je die af en toe een duwtje geeft, kun je hem in beweging houden.
+
+\xmsection{Trillingen in fase en tegenfase}
+We beschouwen twee harmonische trillingen met dezelfde $\omega$ en een verschillende beginfase $\varphi_0$. (eventueel met verschillende amplitude). 
+\begin{center}
+\begin{itemize}
+    \item $x_A(t)=A_1\cdot (\omega \cdot t + \varphi_{0,1})$
+    \item $x_B(t)=A_2\cdot (\omega \cdot t + \varphi_{0,2})$
+\end{itemize}
+
+\end{center}
+
+We berekenen het faseverschil $\Delta \varphi$ tussen de twee trillingen:
+\begin{center}
+   $\Delta \varphi=\varphi_2-\varphi_1=\omega\cdot t+\varphi_{0,2}-\omega \cdot t-\varphi_{0,1}= \varphi_{0,2}-\varphi_{0,1}$
+\end{center}
+\begin{image}
+\begin{tikzpicture}
+    
+\begin{axis}[restrict y to domain=-20:1000,
+            ylabel={$x(m)$},
+            xlabel={$t(s)$},
+            %axis equal image=true,
+            grid,
+            grid style={gray!50},
+            grid=both,
+        axis y line=center,
+        axis x line=middle, 
+        axis on top=true,
+        xmin=-1,
+        xmax=10,
+        ymin=-1.1,
+        ymax=1.1,
+        ytick={\empty},
+        xtick={\empty},
+        x=1cm,y=2 cm]
+    
+     \addplot[blue,ultra thick,samples=500,smooth,domain=-5:10] {sin(deg(x))}; 
+        \addplot[red,ultra thick,samples=500,smooth,domain=-5:10] {0.75*sin(deg(x+2))}; 
+     
+    
+\end{axis}
+\end{tikzpicture}
+\end{image}
+Er bestaan twee speciale gevallen voor het faseverschil:
+\begin{description}
+    \item [Trilling in fase: $\Delta\varphi=n\cdot 2\pi$ \ \ \ \ $(n\in\mathbb{Z})$] \ \\
+        \begin{image}
+    \begin{tikzpicture}
+    \begin{axis}[restrict y to domain=-20:1000,
+            ylabel={$x(m)$},
+            xlabel={$t(s)$},
+            %axis equal image=true,
+            grid,
+            grid style={gray!50},
+            grid=both,
+        axis y line=center,
+        axis x line=middle, 
+        axis on top=true,
+        xmin=-1,
+        xmax=10,
+        ymin=-1.1,
+        ymax=1.1,
+        ytick={\empty},
+        xtick={\empty},
+        x=0.5cm,y=1 cm]
+    
+     \addplot[blue,ultra thick,samples=500,smooth,domain=-5:10] {sin(deg(x))}; 
+        \addplot[red,ultra thick,samples=500,smooth,domain=-5:10] {0.75*sin(deg(x))};
+    \end{axis}
+    \end{tikzpicture}
+    \end{image}
+    Wanneer het faseverschil een even aantal keer $\pi$ bedraagt, dan zijn de twee trillingen in fase: de twee trillers passeren op hetzelfde ogenblik het evenwichtspunt in dezelfde zin en bereiken op hetzelfde ogenblik hun positief en negatief maximum.
+
+    \item [Trilling in tegenfase: $\Delta\varphi=(2n+1) \cdot \pi$ \ \ \ \ $(n\in\mathbb{Z})$] \ \\
+        \begin{image}
+    \begin{tikzpicture}
+    \begin{axis}[restrict y to domain=-20:1000,
+            ylabel={$x(m)$},
+            xlabel={$t(s)$},
+            %axis equal image=true,
+            grid,
+            grid style={gray!50},
+            grid=both,
+        axis y line=center,
+        axis x line=middle, 
+        axis on top=true,
+        xmin=-1,
+        xmax=10,
+        ymin=-1.1,
+        ymax=1.1,
+        ytick={\empty},
+        xtick={\empty},
+        x=0.5cm,y=1 cm]
+    
+     \addplot[blue,ultra thick,samples=500,smooth,domain=-5:10] {sin(deg(x))}; 
+        \addplot[red,ultra thick,samples=500,smooth,domain=-5:10] {0.75*sin(deg(x+pi))};
+    \end{axis}
+    \end{tikzpicture}
+    \end{image}
+    Wanneer het faseverschil een oneven aantal keer $\pi$ bedraagt, dan zijn de twee trillingen in tegenfase: de twee trillers passeren op hetzelfde ogenblik het evenwichtspunt in tegengestelde zin. Wanneer de ene triller zijn positief maximum bereikt, dan bevindt de tweede triller zich in het negatief maximum.
+
+\end{description}
+\end{document}

@@ -1,0 +1,183 @@
+
+\newcommand{\cocalc}{\includegraphics[scale=0.05]{../pictures/cocalc_icon.png}}              %afbeelding cocalc (verwijst naar voorbeelden/oefening in, cocalc
+
+\newcommand{\pcode}[1]{\texttt{\textcolor{red}{#1}}} %python-commando's weergeven in deze stijl
+
+\newcommand{\csv}[2]{\href{#1}{(\includegraphics[scale=0.05]{csv-icon.png} #2)}}
+
+\newcommand{\fystip}{\begin{warning}
+	Denk aan!
+	\begin{itemize}
+		\item correct notatie grootheden.
+		\item bij een grootheid hoort een eenheid.
+		\item resultaten in wetenschappelijke notatie.
+		\item beduidende cijfers.
+	\end{itemize}
+\end{warning}}
+
+
+
+% Instelling om stukjes code weer te geven
+    \usepackage{listings}
+    
+    
+    
+    %New colors defined below
+    \definecolor{codegreen}{rgb}{0,0.6,0}
+    \definecolor{codegray}{rgb}{0.5,0.5,0.5}
+    \definecolor{codepurple}{rgb}{0.58,0,0.82}
+    \definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+    
+    %Code listing style named "mystyle"
+    \lstdefinestyle{mystyle}{
+      backgroundcolor=\color{backcolour}, commentstyle=\color{codegreen},
+      keywordstyle=\color{red},
+      numberstyle=\tiny\color{codegray},
+      stringstyle=\color{codepurple},
+      basicstyle=\ttfamily\footnotesize,
+      breakatwhitespace=false,         
+      breaklines=true,                 
+      captionpos=b,                    
+      keepspaces=true,                 
+      numbers=left,                    
+      numbersep=5pt,                  
+      showspaces=false,                
+      showstringspaces=false,
+      showtabs=false,                  
+      tabsize=2
+    }
+    
+    \lstset{style=mystyle}
+
+%niveau oefeningen
+
+%Specifiek element uit de lijst van kleuren
+
+
+
+
+\newcommand{\oefniv}[1]
+{
+\ifnum #1=1 
+    \def\mycolor{gray}
+\else 
+    \ifnum #1=2
+        \def\mycolor{blue}
+    \else
+        \ifnum #1=3
+            \def\mycolor{green}
+        \else
+            \ifnum #1=4 
+                \def\mycolor{orange}
+            \else
+                \ifnum #1=5 
+                    \def\mycolor{red}
+                \else
+                    \ifnum #1=6 
+                        \def\mycolor{violet}
+                    \else
+                        \def\mycolor{black}
+                    \fi
+                \fi 
+            \fi 
+        \fi
+    \fi 
+\fi
+\begin{tikzpicture}[scale=0.15]
+    \draw[draw=white,fill=gray!50,thick] (0, 0) rectangle (2, 2);
+    \draw[draw=white,fill=blue!50,thick] (2, 0) rectangle (4, 2);
+    \draw[draw=white,fill=green!50,thick] (4, 0) rectangle (6, 2);
+    \draw[draw=white,fill=orange!50,thick] (6, 0) rectangle (8, 2);
+    \draw[draw=white,fill=red!50,thick] (8, 0) rectangle (10, 2);
+    \draw[draw=white,fill=violet!50,thick] (10, 0) rectangle (12, 2);
+
+    \draw[draw=white,fill=\mycolor,thick] ({(#1-1)*2}, 0) -- ({(#1-1)*2},4) -- ({(#1)*2},4) -- ({(#1)*2},0) -- cycle;
+\end{tikzpicture}
+\\
+}
+
+%eigenschappen veer
+
+\usetikzlibrary{decorations.pathmorphing,calc,patterns}
+
+\makeatletter
+
+\def\pgfdecorationspringstraightlinelength{.5cm}
+\def\pgfdecorationspringnumberofelement{8}
+\def\pgfdecorationspringnaturallength{5cm}
+\pgfkeys{%
+  /pgf/decoration/.cd,
+  spring straight line length/.code={%
+    \pgfmathsetlengthmacro\pgfdecorationspringstraightlinelength{#1}},
+  spring natural length/.code={%
+    \pgfmathsetlengthmacro\pgfdecorationspringnaturallength{#1}},
+  spring number of element/.store in=\pgfdecorationspringnumberofelement
+}
+
+\pgfdeclaredecoration{coil spring}{straight line}{%
+  \state{straight line}[%
+    persistent precomputation = {%
+      % Compute the effective length of the spring (without the length
+      % of the two straight lines): \pgfdecorationspringeffectivelength
+      \pgfmathsetlengthmacro{\pgfdecorationspringeffectivelength}%
+        {\pgfdecoratedpathlength-2*\pgfdecorationspringstraightlinelength}
+      % Compute the effective length of one coil pattern:
+      % \pgfdecorationspringeffectivelengthofonecoil
+      \pgfmathsetlengthmacro{\pgfdecorationspringeffectivelengthofonecoil}%
+        {\pgfdecorationspringeffectivelength/\pgfdecorationspringnumberofelement}
+    },
+    width = \pgfdecorationspringstraightlinelength,
+    next state = draw spring]{%
+      \pgfpathlineto{%
+        \pgfqpoint{%
+          \pgfdecorationspringstraightlinelength}{0pt}}
+  }
+  \state{draw spring}%
+    [width=\pgfdecorationspringeffectivelengthofonecoil,
+     repeat state=\pgfdecorationspringnumberofelement-1,next state=final]{%
+       \pgfpathcurveto
+         {\pgfpoint@onspringcoil{0    }{ 0.555}{1}}
+         {\pgfpoint@onspringcoil{0.445}{ 1    }{2}}
+         {\pgfpoint@onspringcoil{1    }{ 1    }{3}}
+       \pgfpathcurveto
+         {\pgfpoint@onspringcoil{1.555}{ 1    }{4}}
+         {\pgfpoint@onspringcoil{2    }{ 0.555}{5}}
+         {\pgfpoint@onspringcoil{2    }{ 0    }{6}}
+       \pgfpathcurveto
+         {\pgfpoint@onspringcoil{2    }{-0.555}{7}}
+         {\pgfpoint@onspringcoil{1.555}{-1    }{8}}
+         {\pgfpoint@onspringcoil{1    }{-1    }{9}}
+       \pgfpathcurveto
+         {\pgfpoint@onspringcoil{0.445}{-1    }{10}}
+         {\pgfpoint@onspringcoil{0    }{-0.555}{11}}
+         {\pgfpoint@onspringcoil{0    }{ 0    }{12}}
+  }
+  \state{final}{%
+    \pgfpathlineto{\pgfpointdecoratedpathlast}
+  }
+}
+
+\def\pgfpoint@onspringcoil#1#2#3{%
+  \pgf@x=#1\pgfdecorationsegmentamplitude%
+  \pgf@x=.5\pgf@x%
+  \pgf@y=#2\pgfdecorationsegmentamplitude%
+  \pgfmathparse{0.083333333333*\pgfdecorationspringeffectivelengthofonecoil}%
+  \pgf@xa=\pgfmathresult pt
+  \advance\pgf@x by#3\pgf@xa%
+}
+
+
+\makeatother
+
+\tikzset{%
+  Spring/.style = {%
+    decoration = {%
+      coil spring,
+      spring straight line length = .5cm,
+      % To be added
+      spring natural length = #1,
+      spring number of element = 8,
+      amplitude=3mm},
+    decorate,
+    very thick},
+  Spring/.default = {4cm}}

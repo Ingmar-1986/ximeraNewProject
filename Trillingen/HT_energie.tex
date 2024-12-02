@@ -1,0 +1,182 @@
+\documentclass{ximera}
+\input{../Preamble_totaal}
+\addPrintStyle{..}
+
+
+
+
+
+\begin{document}
+    \author{Ingmar Herreman}
+    \date{Januari 2024}
+    \xmtitle{\fys{De energie van een harmonisch trillend systeem}}{}
+
+\doel{F48}    
+
+\begin{center}
+\youtube{7FfKaIgArJ8}
+\end{center}
+
+Een ongedempte triller is een mooie toepassing van de wet van behoud van “mechanische” energie zoals die in het 4de jaar werd gezien.
+\begin{center}
+$E_{kin}+E_{pot}=C^{te}$
+\end{center}
+Een massa die harmonische trilling uitvoert bezit steeds twee vormen van energie, potentiële energie $E_{pot}$ en kinetische energie $E_{kin}$, die samen de mechanische energie $E_{mech}$ van het systeem uitmaken.
+
+\xmsection{De kinetische energie}
+\begin{proof}
+\begin{align*}
+    E_{kin} & = \dfrac{1}{2}m\cdot v^2 \\
+    &=\dfrac{1}{2}m\cdot A^2\cdot \omega^2 \cdot \cos^2 (\omega \cdot t+\phi_0)
+\end{align*}
+Aangezien $\omega=2\pi\cdot f =\sqrt{\dfrac{k}{m}}$ is
+\begin{align*}
+    E_{kin}&=\dfrac{1}{2}m\cdot A^2\cdot \dfrac{k}{m} \cdot \cos^2 (\omega \cdot t+\phi_0) \\
+    &=\dfrac{1}{2}\cdot A^2\cdot k \cdot \cos^2 (\omega \cdot t+\phi_0) 
+\end{align*}
+\end{proof}
+
+
+\begin{definition}
+    [Kinetische energie]  \ \\
+    \begin{center}
+        \important{E_{kin}=\dfrac{1}{2}\cdot A^2\cdot k \cdot \cos^2 (\omega \cdot t+\phi_0)}
+    \end{center}
+\end{definition}
+\begin{remark}
+    \begin{itemize}
+        \item 	De harmonische trillende massa heeft kinetische energie $E_{kin}$ wanneer de snelheid verschillend is van nul.
+	\item In het evenwichtspunt is de kinetische energie maximaal.
+	\item Bij maximale uitwijking is de kinetische energie gelijk aan 0.
+    \end{itemize}
+\end{remark}
+
+\xmsection{De potentiële energie}
+\begin{proof}
+\begin{align*}
+    E_{pot} & = \dfrac{1}{2}k\cdot (\Delta x)^2 \\
+    &=\dfrac{1}{2}k\cdot A^2\cdot  \sin^2 (\omega \cdot t+\phi_0)
+\end{align*}
+\end{proof}
+
+
+\begin{definition}
+    [Kinetische energie]  \ \\
+    \begin{center}
+        \important{E_{pot}=\dfrac{1}{2}k\cdot A^2\cdot  \sin^2 (\omega \cdot t+\phi_0)}
+    \end{center}
+\end{definition}
+\begin{remark}
+    \begin{itemize}
+        \item
+	De harmonische trillende massa heeft potentiële energie $E_{pot}$ wanneer de uitwijking verschillend is van nul.
+	\item In het evenwichtspunt is de potentiële energie 0.
+	\item Bij maximale uitwijking is de potentiële energie maximaal.
+
+    \end{itemize}
+\end{remark}
+
+
+\xmsection{De mechanische energie}
+Volgens de wet van behoud van mechanische energie is de totale hoeveelheid mechanische energie constant.
+\begin{proof}
+\begin{align*}
+    E_{mech} &=E_{kin}+E_{pot} \\
+    & =\dfrac{1}{2}\cdot A^2\cdot k \cdot \cos^2 (\omega \cdot t+\phi_0) + \dfrac{1}{2}m\cdot (\Delta x)^2 \\
+    &=\dfrac{1}{2}k\cdot A^2  \underbrace{\left(\cos^2 (\omega \cdot t+\phi_0)+\sin^2 (\omega \cdot t+\phi_0)\right)}_{=1} \\
+    &=\dfrac{1}{2}k\cdot A^2  \\
+    &&f=\dfrac{1}{2\pi}\sqrt{\dfrac{k}{m}} \Leftrightarrow k=4\pi^2\cdot m \cdot f^2 \\
+    E_{mech} &= 2\pi^2\cdot m\cdot f^2 \cdot A^2
+\end{align*}
+\end{proof}
+
+
+\begin{definition}
+    [Mechanische energie]  \ \\
+    \begin{center}
+        \important{E_{pot}=\dfrac{1}{2}k\cdot A^2=2\pi^2\cdot m\cdot f^2 \cdot A^2}
+    \end{center}
+\end{definition}
+
+De mechanische energie van een systeem dat een harmonische trilling uitvoert, is afhankelijk van de amplitude. Hoe groter de amplitude, hoe groter de mechanische energie van het systeem.
+Bij een ongedempte trilling blijft de amplitude en de mechanische energie van het systeem constant.
+
+\begin{image}
+    \begin{tikzpicture}
+    \def\tick#1#2{\draw[thick] (#1)++(#2:0.12) --++ (#2-180:0.24)}
+  \def\xmax{7}    % max x axis
+  \def\ymax{4}    % max y axis
+  \def\A{0.8*\xmax} % maximum extension
+  \def\E{0.8*\ymax} % maximum total energy
+  
+  % AXIS
+  \draw[->,thick] (0,-0.1*\ymax) -- (0,\ymax) node[left] {$E$};
+  \draw[->,thick] (-\xmax,0) -- (\xmax,0) node[right] {$x$};
+  \draw[dashed] (-\A,0) --++ (0,0.9*\ymax);
+  \draw[dashed] ( \A,0) --++ (0,0.9*\ymax);
+  \draw[very thick,blue] (-\A,\E) -- (\A,\E);
+  
+  % PLOT
+  \draw[very thick,teal,samples=100,smooth,variable=\x,domain=-\A:\A]
+    plot(\x,{\E/(\A*\A)*\x*\x)});
+  \draw[very thick,red,samples=100,smooth,variable=\x,domain=-\A:\A]
+    plot(\x,{\E-\E/(\A*\A)*\x*\x)});
+  \node[teal,right,fill=white,inner sep=0,scale=0.9] at (0.92*\A,0.7*\E) {$E_{pot} = \frac{1}{2}kx^2$};
+  \node[red,right,fill=white,inner sep=0,scale=0.9] at (0.92*\A,0.3*\E) {$E_{kin} = \frac{1}{2}mv^2$};
+    \tick{0,\E}{180} node[above right=0,scale=1] {\textcolor{blue}{$E_\text{tot}$}};
+  \tick{-\A,0}{90} node[below=0,scale=1] {$-x_\text{max}$};
+  \tick{\A,0}{90} node[below=0,scale=1] {$x_\text{max}$};
+  
+\end{tikzpicture}
+\end{image}
+\begin{image}
+\begin{tikzpicture}
+\def\tick#1#2{\draw[thick] (#1)++(#2:0.12) --++ (#2-180:0.24)}
+\def\xmax{10} 
+  \def\ymax{5} % max y axis
+  \def\A{0.8*\ymax} % maximum extension
+  \def\om{(2.5*360/(0.94*\xmax))} % angular frequency in degrees
+  \def\E{0.8*\ymax}
+  
+  % AXIS
+  \draw[->,thick] (0,-0.1*\ymax) -- (0,\ymax) node[left] {$E$};
+  \draw[->,thick] (-0.1*\ymax,0) -- (\xmax,0) node[below] {$t$};
+  \draw[very thick,blue] (0,\A) -- (0.95*\xmax,\A);
+  
+  % PLOT
+  \draw[very thick, teal,samples=500,smooth,variable=\x,domain=0:0.94*\xmax]
+    plot(\x,{\A*cos(\om*\x)^2});
+  \draw[very thick,red,samples=500,smooth,variable=\x,domain=0:0.94*\xmax]
+    plot(\x,{\A*sin(\om*\x)^2});
+  \tick{0,\A}{0} node[above right=0,scale=1] {\textcolor{blue}{$E_{tot}$}};
+   \node[teal,right,fill=white,inner sep=0,scale=0.9] at (0.92*\A+6,0.7*\E) {$E_{pot} = \frac{1}{2}kx^2$};
+  \node[red,right,fill=white,inner sep=0,scale=0.9] at (0.92*\A+6,0.3*\E) {$E_{kin} = \frac{1}{2}mv^2$};
+
+  
+\end{tikzpicture}
+
+\end{image}
+
+\xmsection{Oefeningen}
+
+\begin{exercise} \oefniv{3}
+    Een blokje met massa $150 \ g$ trilt aan een veer met veerconstante $20 \dfrac{N}{m}$ en amplitude $10,0 \ cm$. 
+    Bereken de mechanische energie.
+\end{exercise}
+
+\begin{exercise} \oefniv{3}
+    Een blokje met massa $200 \ g$ wordt aan een veer met lengte $80 \ cm$ gehangen. De veer rekt $20 \ cm$ uit. 
+    Het blokje wordt aan het trillen gebracht met een amplitude van $10 \ cm$.
+        \begin{question}
+	   Bepaal $T$, $f$ en $\omega$
+        \end{question}
+
+        \begin{question}
+        Bepaal de maximale snelheid en versnelling van het blokje. 
+        \end{question}
+
+        \begin{question}
+          Bepaal de energie van het trillend blokje.  
+        \end{question}
+\end{exercise}
+\end{document}
