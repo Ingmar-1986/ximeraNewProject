@@ -409,10 +409,7 @@
 	footer .page-link {
 		padding: 0;
 	}
-	.brandlogo {
-		visibility: hidden; /* Verberg de originele afbeelding */
-		position: relative; /* Zorg dat het pseudo-element correct positioneert */
-	}
+
 
 	.brandlogo.logo {
 		visibility: hidden; /* Verberg de originele afbeelding */
@@ -420,7 +417,10 @@
 	}
 
 
-	
+	.brandlogo {
+		position: relative; /* Zorg ervoor dat het element een context voor positionering heeft */
+		z-index: 1; /* Z-index van het originele element */
+	}
 	
 	.brandlogo::after {
 		content: ''; /* Voeg een nieuw element toe */
@@ -434,6 +434,7 @@
 		background-size: contain;
 		background-repeat: no-repeat;
 		background-position: left;
+		z-index: 10; /* Zorg ervoor dat dit hoger is dan de z-index van andere elementen */
 	}
 
 	.main-title {
