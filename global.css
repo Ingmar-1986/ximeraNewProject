@@ -434,26 +434,19 @@
 		padding: 10px; /* Voeg wat ruimte toe rondom de inhoud */
 	}
 	
-	header {
-		display: flex; /* Zorg dat de inhoud in de header correct wordt weergegeven */
-		justify-content: center; /* Centreer de inhoud horizontaal */
-		align-items: center; /* Centreer de inhoud verticaal */
-		background-color: #00008b; /* Donkerblauw */
-		background-image: url('https://www.campusbellevue.be/images/logo.png'); /* Voeg de afbeelding toe */
-		background-repeat: no-repeat; /* Voorkom herhaling van de afbeelding */
-		background-position: center center; /* Centreer de afbeelding in beide richtingen */
-		background-size: contain; /* Zorg dat de afbeelding volledig zichtbaar is */
-		height: 150px; /* Stel de hoogte van de header in */
-		width: 100%; /* Zorg ervoor dat de header de breedte van de pagina vult */
-	}
-
-
 	body {
-		background-color: rgb(197, 201, 197); /* Felgroene achtergrond zonder transparantie */
-		margin: 0; /* Verwijder standaard marges van de body */
-		display: flex; /* Gebruik flexbox voor uitlijning */
-		flex-direction: column; /* Zorg dat inhoud van boven naar beneden wordt gestapeld */
-		min-height: 100vh; /* Zorg dat de body minstens de schermhoogte vult */
+		margin: 0; /* Verwijder standaard marges */
+		padding: 0; /* Verwijder standaard opvulling */
+		background-color: #00008b; /* Donkerblauwe achtergrondkleur */
+		background-image: url('https://www.campusbellevue.be/images/logo.png'); /* Voeg het logo toe */
+		background-repeat: no-repeat; /* Voorkom herhaling van de afbeelding */
+		background-position: center top; /* Plaats de afbeelding bovenaan en gecentreerd */
+		background-size: contain; /* Zorg dat de afbeelding volledig zichtbaar is */
+		min-height: 100vh; /* Zorg dat de body minimaal de hoogte van het scherm vult */
+		display: flex; /* Gebruik flexbox voor lay-out */
+		flex-direction: column; /* Zorg dat de inhoud onder elkaar staat */
+		justify-content: flex-start; /* Houd de inhoud aan de bovenkant */
+		color: white; /* Witte tekst als standaardkleur */
 	}
 	
 
