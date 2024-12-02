@@ -478,3 +478,9 @@
 		background-color: rgb(207, 99, 46); /* Felgroen */
 	}
 
+	.modal-header {
+		background-color: rgb(232, 15, 171); /* Felgroen */
+	}
+	.cm-s-default .cm-header {
+		color: rgb(255, 0, 0);
+	}
