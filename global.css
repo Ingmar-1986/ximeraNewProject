@@ -434,3 +434,7 @@
 		padding: 10px; /* Voeg wat ruimte toe rondom de inhoud */
 	}
 	
+	body {
+		background-color: green; /* Felgroen */
+	}
+	
