@@ -429,5 +429,8 @@
 		background-position: center;
 	}
 
-	
+	.wrapper {
+		background-color: green; /* Felgroen */
+		color: white; /* Optioneel: tekst wit maken voor contrast */
+	}
 	
