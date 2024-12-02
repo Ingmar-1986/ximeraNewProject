@@ -435,38 +435,47 @@
 	}
 	
 	body {
-		background-color: rgba(7, 254, 7, 1); /* Felgroene achtergrond zonder transparantie */
+		background-color: rgb(197, 201, 197); /* Felgroene achtergrond zonder transparantie */
 		margin: 0; /* Verwijder standaard marges van de body */
 		display: flex; /* Gebruik flexbox voor uitlijning */
 		flex-direction: column; /* Zorg dat inhoud van boven naar beneden wordt gestapeld */
-		justify-content: flex-end; /* Zorg dat de inhoud aan de onderkant staat */
+		justify-content: space-between; /* Verspreid de inhoud verticaal */
 		min-height: 100vh; /* Zorg dat de body minstens de schermhoogte vult */
+	}
+	
+	header {
+		display: flex;
+		justify-content: center; /* Centreer logo horizontaal */
+		align-items: center; /* Centreer logo verticaal */
+		background-image: url('https://www.campusbellevue.be/images/logo.png'); /* Voeg het logo toe */
+		background-repeat: no-repeat;
+		background-position: center top; /* Plaats het logo bovenaan */
+		background-size: contain; /* Zorg dat het logo volledig zichtbaar blijft */
+		height: 150px; /* Stel een vaste hoogte in voor het logo */
+		width: 100%; /* Maak de header net zo breed als de pagina */
 	}
 	
 	footer {
 		display: flex;
-		justify-content: center; /* Centreer inhoud horizontaal */
-		align-items: flex-end; /* Centreer tekst en afbeelding verticaal in de footer */
-		background-image: url('https://www.campusbellevue.be/images/logo.png'); /* Voeg de afbeelding toe */
-		background-repeat: no-repeat;
-		background-position: center bottom; /* Plaats afbeelding onderaan */
-		background-size: contain; /* Zorg dat de afbeelding volledig zichtbaar blijft */
-		height: 200px; /* Stel de hoogte van de footer in */
-		position: relative; /* Voor het pseudo-element */
+		justify-content: center; /* Centreer tekst horizontaal */
+		align-items: center; /* Centreer tekst verticaal */
+		background-color: transparent; /* Geen achtergrondkleur */
+		height: 100px; /* Hoogte van de footer */
+	}
+	
+	footer > * {
+		display: none; /* Verberg alle directe kinderen van de footer */
 	}
 	
 	footer::after {
-		content: "WISKUNDE IS LEUK"; /* Voeg de tekst toe */
-		position: absolute; /* Positioneer de tekst boven de afbeelding */
-		bottom: 10px; /* Zet de tekst iets boven de onderkant */
-		left: 50%; /* Centreer horizontaal */
-		transform: translateX(-50%); /* Nette horizontale centrering */
+		content: "WISKUNDE IS LEUK"; /* Voeg de gewenste tekst toe */
 		color: white; /* Maak de tekst wit */
 		font-size: 24px; /* Grotere tekst */
 		font-weight: bold; /* Maak de tekst vetgedrukt */
 		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Voeg een schaduw toe voor betere zichtbaarheid */
 		text-align: center;
 	}
+	
 
 	.main-inhoud {
 		background-color: rgb(244, 241, 242); /* Felgroen */
