@@ -413,7 +413,7 @@
 		visibility: hidden; /* Verberg de originele afbeelding */
 		position: relative; /* Zorg dat het pseudo-element correct positioneert */
 	}
-	
+
 	.brandlogo.logo {
 		visibility: hidden; /* Verberg de originele afbeelding */
 		position: relative; /* Zorg dat het pseudo-element correct positioneert */
@@ -422,7 +422,7 @@
 
 	
 	
-	.brandlogo.logo::after {
+	.brandlogo::after {
 		content: ''; /* Voeg een nieuw element toe */
 		display: block;
 		position: absolute;
@@ -433,7 +433,7 @@
 		background-image: url('https://www.campusbellevue.be/images/logo.png');
 		background-size: contain;
 		background-repeat: no-repeat;
-		background-position: center;
+		background-position: left;
 	}
 
 	.main-title {
