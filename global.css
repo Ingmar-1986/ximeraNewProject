@@ -410,7 +410,7 @@
 		padding: 0;
 	}
 
-	.brandlogo logo {
+	.brandlogo.logo {
 		content: url('/pictures/logo_school.png');
 		width: 600px; /* Stel de breedte in */
 		height: auto; /* Behoud de verhouding */
