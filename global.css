@@ -443,5 +443,38 @@
 	}
 	
 	.toc-search {
-		background-color: rgb(63, 172, 245); /* Felgroen */
+		background-color: rgb(249, 7, 7); /* Felgroen */
 	}
+
+	.wrapper {
+		background-color: rgb(12, 12, 12); /* Felgroen */
+	}
+
+	.lds-ring {
+		background-color: rgb(6, 246, 34); /* Felgroen */
+	}
+
+	.xmsettings {
+		background-color: rgb(237, 49, 205); /* Felgroen */
+	}
+
+	.xmuser {
+		background-color: rgb(181, 234, 24); /* Felgroen */
+	}
+
+	.xmhelp {
+		background-color: rgb(12, 12, 12); /* Felgroen */
+	}
+
+	.toc {
+		background-color: rgb(252, 14, 14); /* Felgroen */
+	}
+
+	.progress.xmprogresshidden	{
+		background-color: rgb(12, 12, 12); /* Felgroen */
+	}
+
+	.progress-bar {
+		background-color: rgb(207, 99, 46); /* Felgroen */
+	}
+
