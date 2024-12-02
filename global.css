@@ -429,8 +429,8 @@
 		background-position: center;
 	}
 
-	.wrapper {
+	.main-title {
 		background-color: green; /* Felgroen */
-		color: white; /* Optioneel: tekst wit maken voor contrast */
+		padding: 10px; /* Voeg wat ruimte toe rondom de inhoud */
 	}
 	
