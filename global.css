@@ -409,4 +409,13 @@
 	footer .page-link {
 		padding: 0;
 	}
+
+	.logo {
+		width: 600px; /* Stel de breedte in */
+		height: auto; /* Behoud de verhouding */
+		filter: grayscale(100%); /* Maak de afbeelding zwart-wit */
+		border-radius: 10px; /* Voeg afgeronde hoeken toe */
+		box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); /* Schaduw */
+	}
+	
 	
