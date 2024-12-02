@@ -411,12 +411,23 @@
 	}
 
 	.brandlogo.logo {
-		content: url('/pictures/logo_school.png');
-		width: 600px; /* Stel de breedte in */
-		height: auto; /* Behoud de verhouding */
-		filter: grayscale(100%); /* Maak de afbeelding zwart-wit */
-		border-radius: 10px; /* Voeg afgeronde hoeken toe */
-		box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); /* Schaduw */
+		content: ''; /* Verberg de originele afbeelding */
+		background-image: url('https://www.campusbellevue.be/images/logo.png');
+		background-size: contain;
+		background-repeat: no-repeat;
+		display: block; /* Zorg dat de afbeelding zichtbaar blijft */
+		width: 200px; /* Stel de breedte van het nieuwe logo in */
+		height: 100px; /* Stel de hoogte in */
+	}
+
+	.brandlogo {
+		content: ''; /* Verberg de originele afbeelding */
+		background-image: url('https://www.campusbellevue.be/images/logo.png');
+		background-size: contain;
+		background-repeat: no-repeat;
+		display: block; /* Zorg dat de afbeelding zichtbaar blijft */
+		width: 600px; /* Stel de breedte van het nieuwe logo in */
+		height: 100px; /* Stel de hoogte in */
 	}
 
 	
