@@ -434,26 +434,29 @@
 		padding: 10px; /* Voeg wat ruimte toe rondom de inhoud */
 	}
 	
+	header {
+		display: flex; /* Zorg dat de inhoud in de header correct wordt weergegeven */
+		justify-content: center; /* Centreer de inhoud horizontaal */
+		align-items: center; /* Centreer de inhoud verticaal */
+		background-color: #00008b; /* Donkerblauw */
+		background-image: url('https://www.campusbellevue.be/images/logo.png'); /* Voeg de afbeelding toe */
+		background-repeat: no-repeat; /* Voorkom herhaling van de afbeelding */
+		background-position: center center; /* Centreer de afbeelding in beide richtingen */
+		background-size: contain; /* Zorg dat de afbeelding volledig zichtbaar is */
+		height: 150px; /* Stel de hoogte van de header in */
+		width: 100%; /* Zorg ervoor dat de header de breedte van de pagina vult */
+	}
+
+
 	body {
 		background-color: rgb(197, 201, 197); /* Felgroene achtergrond zonder transparantie */
 		margin: 0; /* Verwijder standaard marges van de body */
 		display: flex; /* Gebruik flexbox voor uitlijning */
 		flex-direction: column; /* Zorg dat inhoud van boven naar beneden wordt gestapeld */
-		justify-content: space-between; /* Verspreid de inhoud verticaal */
 		min-height: 100vh; /* Zorg dat de body minstens de schermhoogte vult */
 	}
 	
-	header {
-		display: flex;
-		justify-content: center; /* Centreer logo horizontaal */
-		align-items: center; /* Centreer logo verticaal */
-		background-image: url('https://www.campusbellevue.be/images/logo.png'); /* Voeg het logo toe */
-		background-repeat: no-repeat;
-		background-position: center top; /* Plaats het logo bovenaan */
-		background-size: contain; /* Zorg dat het logo volledig zichtbaar blijft */
-		height: 150px; /* Stel een vaste hoogte in voor het logo */
-		width: 100%; /* Maak de header net zo breed als de pagina */
-	}
+
 	
 	footer {
 		display: flex;
