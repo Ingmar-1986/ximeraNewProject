@@ -409,35 +409,24 @@
 	footer .page-link {
 		padding: 0;
 	}
-	.brandlogo {
-		background-image: url('https://www.campusbellevue.be/images/logo.png');
-		background-size: contain;
-		background-repeat: no-repeat;
-		background-position: center;
-		display: block; /* Vervangt de inline afbeelding */
-		width: 200px; /* Stel de breedte in */
-		height: 100px; /* Stel de hoogte in */
-		border: none; /* Optioneel, verwijdert eventuele randstijlen */
-	}
-	
-	.brandlogo img {
-		display: none; /* Verberg de originele <img> */
-	}
-
 
 	.brandlogo.logo {
+		visibility: hidden; /* Verberg de originele afbeelding */
+		position: relative; /* Zorg dat het pseudo-element correct positioneert */
+	}
+	
+	.brandlogo.logo::after {
+		content: ''; /* Voeg een nieuw element toe */
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 200px; /* Breedte van de nieuwe afbeelding */
+		height: 100px; /* Hoogte van de nieuwe afbeelding */
 		background-image: url('https://www.campusbellevue.be/images/logo.png');
 		background-size: contain;
 		background-repeat: no-repeat;
 		background-position: center;
-		display: block; /* Vervangt de inline afbeelding */
-		width: 200px; /* Stel de breedte in */
-		height: 100px; /* Stel de hoogte in */
-		border: none; /* Optioneel, verwijdert eventuele randstijlen */
-	}
-	
-	.brandlogo.logo img {
-		display: none; /* Verberg de originele <img> */
 	}
 
 	
