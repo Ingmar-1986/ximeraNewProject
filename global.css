@@ -409,11 +409,18 @@
 	footer .page-link {
 		padding: 0;
 	}
-
+	.brandlogo {
+		visibility: hidden; /* Verberg de originele afbeelding */
+		position: relative; /* Zorg dat het pseudo-element correct positioneert */
+	}
+	
 	.brandlogo.logo {
 		visibility: hidden; /* Verberg de originele afbeelding */
 		position: relative; /* Zorg dat het pseudo-element correct positioneert */
 	}
+
+
+	
 	
 	.brandlogo.logo::after {
 		content: ''; /* Voeg een nieuw element toe */
