@@ -582,3 +582,9 @@
 	}
 
 
+	.card-title {
+		background-color: green; /* Zet de achtergrondkleur op groen */
+		color: white; /* Optioneel: pas de tekstkleur aan om goed zichtbaar te zijn */
+		padding: 10px; /* Optioneel: voeg wat opvulling toe */
+		border-radius: 5px; /* Optioneel: maak de randen iets afgerond */
+	}
