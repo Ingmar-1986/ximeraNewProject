@@ -588,3 +588,16 @@
 		padding: 10px; /* Optioneel: voeg wat opvulling toe */
 		border-radius: 5px; /* Optioneel: maak de randen iets afgerond */
 	}
+
+	.card-block {
+		flex: 1 1 auto;
+		padding: 1.25rem;
+		background-color: green; /* Zet de achtergrondkleur op groen */
+		color: white; /* Optioneel: pas de tekstkleur aan om goed zichtbaar te zijn */
+		padding: 10px; /* Optioneel: voeg wat opvulling toe */
+		border-radius: 5px; /* Optioneel: maak de randen iets afgerond */
+	  }
+
+
+
+
