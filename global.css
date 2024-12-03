@@ -521,9 +521,64 @@
 		background-color: rgb(207, 99, 46); /* Felgroen */
 	}
 
-	.modal-header {
-		background-color: rgb(215, 111, 186); /* Felgroen */
+
+	.main-inhoud .activity-title {
+  		grid-area: activity-head;
+  		background-color: #FFEB3B;
+  		width: 100%;
+  		display: flex;
+  		align-items: center;
 	}
-	.cm-s-default .cm-header {
-		color: rgb(255, 0, 0);
+
+	.main-inhoud .activity-title .title {
+		width: 100%;
+		background-color: #673AB7;
+		color: white;
+		border: 1px solid;
+		border-radius: 3px;
+		text-align: center;
+		min-width: min-content;
+		margin: 5px;
+		font-size: clamp(16px, 1.5vw, 24px);
 	}
+
+	.toc .part {
+		font-size: larger;
+		background-color: #b01d78;
+	}
+
+	.toc .chapter {
+		font-size: 100%;
+	}
+
+	.toc .section {
+		font-size: 75%;
+	}
+
+	.toc .card {
+		display: initial;
+		flex: initial;
+		position: relative;
+		border: 1px solid rgba(65, 22, 220, 0.125);
+		width: 100%;
+		overflow: hidden;
+		white-space: nowrap;
+	}
+
+	.toc .activity-card {
+		color: black;
+	}
+
+
+
+	.toc .card.activity-card.section {
+	background-color: rgba(184, 227, 25, 0.251);
+	}
+
+	.toc .activity-card.active {
+		background-color: #e90f12 !important;
+		color: white;
+		border-color: #292b2c;
+	}
+
+
