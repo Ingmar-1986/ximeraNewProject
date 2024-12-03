@@ -761,6 +761,178 @@
 
 
 	  .nav {
-		background-color: #f8f9fa; /* Voeg een lichtgrijze achtergrondkleur toe */
+		display: flex;
+		padding-left: 0;
+		margin-bottom: 0;
+		list-style: none;
+		background-color: green; /* Maak de achtergrond groen */
 	  }
+	  
+	  .nav-link {
+		display: block;
+		padding: 0.5em 1em;
+		background-color: green; /* Links hebben ook een groene achtergrond */
+		color: white; /* Tekstkleur wit voor leesbaarheid */
+	  }
+	  
+	  .nav-link:focus, .nav-link:hover {
+		text-decoration: none;
+		background-color: darkgreen; /* Donkergroen bij hover */
+	  }
+	  
+	  .nav-tabs {
+		border-bottom: 1px solid #ddd;
+		background-color: green; /* Tabs groene achtergrond */
+	  }
+	  
+	  .nav-tabs .nav-link {
+		border: 1px solid transparent;
+		background-color: green; /* Groene achtergrond voor tabs */
+		color: white; /* Tekstkleur wit */
+	  }
+	  
+	  .nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover {
+		border-color: #eceeef #eceeef #ddd;
+		background-color: darkgreen; /* Donkergroen bij hover */
+	  }
+	  
+	  .nav-tabs .nav-link.active,
+	  .nav-tabs .nav-item.show .nav-link {
+		color: #fff;
+		background-color: green; /* Actieve tab groen */
+		border-color: #ddd #ddd green;
+	  }
+	  
+	  .nav-pills .nav-link.active,
+	  .nav-pills .nav-item.show .nav-link {
+		color: #fff;
+		cursor: default;
+		background-color: green; /* Groene achtergrond voor actieve pill */
+	  }
+	  
+	  .navbar {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		padding: 0.5rem 1rem;
+		background-color: green; /* Navbar groen */
+	  }
+	  
+	  .navbar-brand {
+		display: inline-block;
+		padding-top: 0.25rem;
+		padding-bottom: 0.25rem;
+		margin-right: 1rem;
+		font-size: 1.25rem;
+		line-height: inherit;
+		white-space: nowrap;
+		color: white; /* Witte tekstkleur */
+	  }
+	  
+	  .navbar-nav {
+		display: flex;
+		flex-direction: column;
+		padding-left: 0;
+		margin-bottom: 0;
+		list-style: none;
+		background-color: green; /* Navbar-nav groene achtergrond */
+	  }
+	  
+	  .navbar-nav .nav-link {
+		padding-right: 0;
+		padding-left: 0;
+		background-color: green; /* Groene achtergrond */
+		color: white; /* Witte tekstkleur */
+	  }
+	  
+	  .navbar-toggler {
+		align-self: flex-start;
+		padding: 0.25rem 0.75rem;
+		font-size: 1.25rem;
+		line-height: 1;
+		background: green; /* Groene achtergrond */
+		border: 1px solid transparent;
+		color: white; /* Witte tekstkleur */
+	  }
+	  
+	  .navbar-toggler:focus, .navbar-toggler:hover {
+		text-decoration: none;
+		background-color: darkgreen; /* Donkerder bij hover */
+	  }
+	  
+	  .navbar-toggler-icon {
+		background: no-repeat center center;
+		background-size: 100% 100%;
+		background-color: green; /* Groene achtergrond voor icon */
+	  }
+	  
+	  .navbar-text {
+		display: inline-block;
+		padding-top: 0.425rem;
+		padding-bottom: 0.425rem;
+		color: white; /* Witte tekstkleur */
+	  }
+	  
+	  @media (min-width: 576px) {
+		.navbar-toggleable {
+		  flex-direction: row;
+		  flex-wrap: nowrap;
+		  align-items: center;
+		  background-color: green; /* Navbar groen voor grotere schermen */
+		}
+	  }
+	  
+	  @media (min-width: 768px) {
+		.navbar-toggleable-sm {
+		  flex-direction: row;
+		  flex-wrap: nowrap;
+		  align-items: center;
+		  background-color: green; /* Navbar groen voor medium schermen */
+		}
+	  }
+	  
+	  @media (min-width: 992px) {
+		.navbar-toggleable-md {
+		  flex-direction: row;
+		  flex-wrap: nowrap;
+		  align-items: center;
+		  background-color: green; /* Navbar groen voor large schermen */
+		}
+	  }
+	  
+	  @media (min-width: 1200px) {
+		.navbar-toggleable-lg {
+		  flex-direction: row;
+		  flex-wrap: nowrap;
+		  align-items: center;
+		  background-color: green; /* Navbar groen voor extra grote schermen */
+		}
+	  }
+	  
+	  .navbar-light .navbar-brand,
+	  .navbar-light .navbar-toggler {
+		color: white; /* Witte tekstkleur voor lichte navbar */
+	  }
+	  
+	  .navbar-light .navbar-nav .nav-link {
+		color: white; /* Witte tekstkleur voor links */
+	  }
+	  
+	  .navbar-light .navbar-text {
+		color: white; /* Witte tekstkleur voor tekst */
+	  }
+	  
+	  .navbar-inverse .navbar-brand,
+	  .navbar-inverse .navbar-toggler {
+		color: white; /* Witte tekstkleur voor inverse navbar */
+	  }
+	  
+	  .navbar-inverse .navbar-nav .nav-link {
+		color: white; /* Witte tekstkleur voor links */
+	  }
+	  
+	  .navbar-inverse .navbar-text {
+		color: white; /* Witte tekstkleur voor tekst */
+	  }
+	  
 	  
