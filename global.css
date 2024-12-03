@@ -416,26 +416,20 @@
 		position: relative; /* Zorg dat het pseudo-element correct positioneert */
 	}
 
-
 	.brandlogo {
-		position: relative; /* Zorg ervoor dat het element een context voor positionering heeft */
-		z-index: 1; /* Z-index van het originele element */
-	}
-	
-	.brandlogo::after {
-		content: ''; /* Voeg een nieuw element toe */
 		display: block;
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 400px; /* Breedte van de nieuwe afbeelding */
-		height: 200px; /* Hoogte van de nieuwe afbeelding */
-		background-image: url('https://www.reshot.com/free-svg-icons/logo/');
+		position: relative; /* Zorg dat de afbeelding correct wordt gepositioneerd */
+		width: 300px;
+		height: 150px;
+		background-image: url('https://www.reshot.com/free-svg-icons/logo/'); /* Nieuwe afbeelding */
 		background-size: contain;
 		background-repeat: no-repeat;
-		background-position: left;
-		z-index: 10; /* Zorg ervoor dat dit hoger is dan de z-index van andere elementen */
-	}
+		background-position: center;
+	  }
+
+
+
+	
 
 	.main-title {
 		background-color: rgb(252, 208, 13); /* Felgroen */
