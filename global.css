@@ -956,4 +956,32 @@
 	  .mr-1.topbar-items a:hover {
 		color: lightgreen; /* Lichtgroene tekstkleur bij hover */
 	  }
+
+	  .btn {
+		display: inline-block;
+		font-weight: normal;
+		line-height: 1.25;
+		text-align: center;
+		white-space: nowrap;
+		vertical-align: middle;
+		user-select: none;
+		border: 1px solid #9C27B0;
+		padding: 0.5rem 1rem;
+		font-size: 1rem;
+		border-radius: 25px; /* Zorgt voor afgeronde hoeken */
+		transition: all 0.2s ease-in-out;
+		background-color: white; /* Standaard achtergrondkleur */
+		color: #9C27B0; /* Tekstkleur passend bij de rand */
+	  }
+	  
+	  .btn:hover {
+		background-color: #9C27B0; /* Paarse achtergrondkleur bij hover */
+		color: white; /* Witte tekstkleur bij hover */
+		transform: scale(1.05); /* Vergroot de knop lichtjes */
+	  }
+	  
+	  .btn:active {
+		background-color: #7B1FA2; /* Donkerpaarse achtergrond bij klikken */
+		transform: scale(0.95); /* Maakt de knop iets kleiner bij klikken */
+	  }
 	  
