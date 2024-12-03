@@ -803,6 +803,7 @@
 		border-color: #ddd #ddd green;
 	  }
 	  
+
 	  .nav-pills .nav-link.active,
 	  .nav-pills .nav-item.show .nav-link {
 		color: #fff;
@@ -935,4 +936,24 @@
 		color: white; /* Witte tekstkleur voor tekst */
 	  }
 	  
+	  .mr-1.topbar-items {
+		display: flex; /* Zorg dat items flexibel zijn */
+		align-items: center; /* Centreer items verticaal */
+		margin-right: 0.25rem; /* Margineer aan de rechterkant */
+		background-color: green; /* Groene achtergrond */
+		padding: 0.5em 1em; /* Voeg padding toe */
+		color: white; /* Witte tekstkleur */
+		border-radius: 4px; /* Optioneel: afgeronde hoeken */
+		border: 1px solid darkgreen; /* Donkergroene rand */
+	  }
+	  
+	  .mr-1.topbar-items a {
+		color: white; /* Witte tekstkleur voor links */
+		text-decoration: none; /* Geen onderstreping */
+		margin-right: 0.5rem; /* Ruimte tussen links */
+	  }
+	  
+	  .mr-1.topbar-items a:hover {
+		color: lightgreen; /* Lichtgroene tekstkleur bij hover */
+	  }
 	  
