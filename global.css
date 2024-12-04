@@ -1011,11 +1011,11 @@
 
 	  /* theoremEnvironments above is a list of lists. Get the correct list: */
 /*Nth from the list the name and color of the class*/
-.doelstelling {
-	background-color: #FDFDFD;
+.template {
+	background-color: #d3edd4;
 	/* Take the color of the class, saturate it to a fixed value, and lighten it to a fixed value (see top of file) */
-	border: 1px solid hsl(0, 92%, 50%);
-	border-left: 12px solid hsl(60deg, 25%, 90%);
+	border: 0px solid hsl(0, 92%, 50%);
+	border-left: 0px solid hsl(60deg, 25%, 90%);
 	/*These are the things that are common to all environments. */
 	padding-left: 12px;
 	padding-right: 24px;
@@ -1025,47 +1025,19 @@
   }
   
   /* Various things get floated inside problem environments, and we don't want floats to float outside their containers */
-  .doelstelling::after {
-	content: ".";
+  .template::after {
+	content: "DOEL";
 	visibility: hidden;
 	display: block;
 	height: 0;
 	clear: both;
   }
   
-  .doelstelling::before {
-	content: "doelstelling" attr(numbered) ".";
+  .template::before {
+	content: "\f047 doelstelling" attr(numbered) "";
 	display: inline;
 	text-transform: capitalize; /* CSS here only applies to one word, like "Theorem." or "Example." */
 	font-weight: bold;
 	padding-right: 0.5em;
 	font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   }
-  
-  .doelstelling ul {
-	padding-left: 1em;
-  }
-
-  .doelstelling {
-	--pba: var(--exercise-background-perc);
-	--pbo: var(--exercise-border-perc);
-	--r: var(--example-red);
-	--g: var(--example-green);
-	--b: var(--example-blue);
-	
-	--background-color: rgb(
-		calc((1 - var(--pba)) * 255 + var(--pba) * var(--r)),
-		calc((1 - var(--pba)) * 255 + var(--pba) * var(--g)),
-		calc((1 - var(--pba)) * 255 + var(--pba) * var(--b))
-	);
-	
-	--border-color: rgb(
-		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--r)),
-		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--g)),
-		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--b))
-	);	
-	
-	background-color: var(--background-color);
-	border: 1px solid var(--border-color);
-	border-left: 12px solid var(--border-color);
-}
