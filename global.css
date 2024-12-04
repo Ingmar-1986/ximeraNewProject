@@ -1,4 +1,10 @@
 :root {
+	/* definieer de kleuren */
+
+	--kleur_banner: #c3004a;
+	--kleur_bottom: #0e2432;
+	--kleur_inhoud: #e3e3e3;
+
 	--definition-red: 0;
 	--definition-green: 255;
 	--definition-blue: 0;
@@ -424,7 +430,7 @@
 		background-size: contain;
 		background-repeat: no-repeat;
 		background-position: center;
-		background-color: #f0f0f0; /* Lichtgrijze achtergrond */
+		background-color: var(--kleur_banner); 
 	}
 
 
@@ -432,7 +438,7 @@
 	
 
 	.main-title {
-		background-color: rgb(252, 208, 13); /* Felgroen */
+		background-color: var(--kleur_banner); 
 		padding: 10px; /* Voeg wat ruimte toe rondom de inhoud */
 	}
 	
@@ -453,7 +459,7 @@
 		display: flex;
 		justify-content: center; /* Centreer tekst horizontaal */
 		align-items: center; /* Centreer tekst verticaal */
-		background-color: transparent; /* Geen achtergrondkleur */
+		background-color: var(--kleur_banner); 
 		height: 100px; /* Hoogte van de footer */
 	}
 	
@@ -476,7 +482,7 @@
 	}
 	
 	.toc-search {
-		background-color: rgb(249, 7, 7); /* Felgroen */
+		background-color: var(--kleur_inhoud); 
 	}
 
 	.wrapper {
