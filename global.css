@@ -440,14 +440,11 @@
 		margin: 0; /* Verwijder standaard marges */
 		padding: 0; /* Verwijder standaard opvulling */
 		background-color: #f9f9fd; /* Donkerblauwe achtergrondkleur */
-		background-repeat: no-repeat; /* Voorkom herhaling van de afbeelding */
-		background-position: center top; /* Plaats de afbeelding bovenaan en gecentreerd */
-		background-size: contain; /* Zorg dat de afbeelding volledig zichtbaar is */
 		min-height: 100vh; /* Zorg dat de body minimaal de hoogte van het scherm vult */
 		display: flex; /* Gebruik flexbox voor lay-out */
 		flex-direction: column; /* Zorg dat de inhoud onder elkaar staat */
 		justify-content: flex-start; /* Houd de inhoud aan de bovenkant */
-		color: white; /* Witte tekst als standaardkleur */
+		color: black; /* Witte tekst als standaardkleur */
 	}
 	
 
@@ -465,7 +462,7 @@
 	}
 	
 	footer::after {
-		content: "WISKUNDE IS LEUK"; /* Voeg de gewenste tekst toe */
+		content: "CAMPUS BELLEVUE IZEGEM"; /* Voeg de gewenste tekst toe */
 		color: white; /* Maak de tekst wit */
 		font-size: 24px; /* Grotere tekst */
 		font-weight: bold; /* Maak de tekst vetgedrukt */
@@ -475,7 +472,7 @@
 	
 
 	.main-inhoud {
-		background-color: rgb(244, 241, 242); /* Felgroen */
+		background-color: white);
 	}
 	
 	.toc-search {
