@@ -571,12 +571,14 @@
 	}
 
 
+
 	.card {
 		position: relative;
 		display: flex;
 		flex-direction: column;
-		background-color: var(--kleur_donkerd); 
-		border: 1px solid #03A9F4;
+		background-color: var(--kleur_inhoud); 
+		border: 1px solid #000;
+		border-radius: 8 px;
 	  }
 	  
 	  .card-block {
@@ -607,7 +609,7 @@
 	  .card-header {
 		padding: 0.75rem 1.25rem;
 		margin-bottom: 0;
-		bbackground-color: var(--kleur_donker); 
+		background-color: var(--kleur_donker); 
 		border-bottom: 1px solid rgba(0, 0, 0, 0.125);
 	  }
 	  .card-footer {
@@ -987,7 +989,7 @@
 	  
 	  .breadcrumb-item {
 		float: left;
-		background-color: #f4f8f6;
+		background-color: var(--kleur_banner)
 	  }
 	  .breadcrumb-item + .breadcrumb-item::before {
 		display: inline-block;
