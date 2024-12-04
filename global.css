@@ -1011,13 +1011,12 @@
 
 	  /* theoremEnvironments above is a list of lists. Get the correct list: */
 /*Nth from the list the name and color of the class*/
-/* Algemene stijlen voor het kader */
-/* Algemene stijlen voor het kader */
+
 .template {
     background-color: #d3edd4; /* Lichtgroene achtergrond */
-    border: 2px solid #5cb85c; /* Groene rand */
+    border: 3px solid #5cb85c; /* Groene rand */
     border-radius: 8px; /* Afgeronde hoeken */
-    padding: 24px 12px 12px; /* Extra ruimte boven voor de titel */
+    padding: 0px 12px 0px; /* Extra ruimte boven voor de titel */
     margin-top: 12px; /* Ruimte boven elk kader */
     position: relative; /* Nodig voor pseudo-elementen */
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtiele schaduw */
@@ -1025,11 +1024,10 @@
 
 /* Titelbalk (met pseudo-elementen voor titel en icoon) */
 .template::before {
-    content: "Doelstelling"; /* Icoon + tekst (Font Awesome symbool) */
-    font-weight: 900; /* Voor de solid-versie van het icoon */
-    font-size: 1.2em; /* Grotere tekst */
-    color: #3c763d; /* Donkergroene kleur */
+    content: "doelstelling"; /* Icoon + tekst (Font Awesome symbool) */
+    font-size: 1em; /* Grotere tekst */
+    color: #000; 
     display: block; /* Plaats de titel op een eigen regel */
-    margin-bottom: 8px; /* Ruimte tussen de titel en de tekst */
+    margin-bottom: 4px; /* Ruimte tussen de titel en de tekst */
 }
 
