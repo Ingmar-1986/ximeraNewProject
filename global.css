@@ -439,12 +439,12 @@
 	body {
 		margin: 0; /* Verwijder standaard marges */
 		padding: 0; /* Verwijder standaard opvulling */
-		background-color: #f9f9fd; /* Donkerblauwe achtergrondkleur */
+		background-color: #f9f9fd; 
 		min-height: 100vh; /* Zorg dat de body minimaal de hoogte van het scherm vult */
 		display: flex; /* Gebruik flexbox voor lay-out */
 		flex-direction: column; /* Zorg dat de inhoud onder elkaar staat */
 		justify-content: flex-start; /* Houd de inhoud aan de bovenkant */
-		color: black; /* Witte tekst als standaardkleur */
+		color: black; 
 	}
 	
 
@@ -472,7 +472,7 @@
 	
 
 	.main-inhoud {
-		background-color: white);
+		background-color: white;
 	}
 	
 	.toc-search {
