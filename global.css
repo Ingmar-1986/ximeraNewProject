@@ -1012,11 +1012,12 @@
 	  /* theoremEnvironments above is a list of lists. Get the correct list: */
 /*Nth from the list the name and color of the class*/
 /* Algemene stijlen voor het kader */
+/* Algemene stijlen voor het kader */
 .template {
     background-color: #d3edd4; /* Lichtgroene achtergrond */
     border: 2px solid #5cb85c; /* Groene rand */
     border-radius: 8px; /* Afgeronde hoeken */
-    padding: 12px 12px 12px 60px; /* Extra ruimte links voor het icoon */
+    padding: 24px 12px 12px; /* Extra ruimte boven voor de titel */
     margin-top: 12px; /* Ruimte boven elk kader */
     position: relative; /* Nodig voor pseudo-elementen */
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtiele schaduw */
@@ -1024,20 +1025,11 @@
 
 /* Titelbalk (met pseudo-elementen voor titel en icoon) */
 .template::before {
-    content: "\f111 Doelstelling"; /* Icoon + tekst (Font Awesome symbool) */
-    font-family: "Font Awesome 5 Free"; /* Zorgt dat Font Awesome werkt */
+    content: "Doelstelling"; /* Icoon + tekst (Font Awesome symbool) */
     font-weight: 900; /* Voor de solid-versie van het icoon */
     font-size: 1.2em; /* Grotere tekst */
     color: #3c763d; /* Donkergroene kleur */
-    position: absolute;
-    top: 12px; /* Plaats de titel bovenaan het kader */
-    left: 12px; /* Plaats de titel links van het kader */
+    display: block; /* Plaats de titel op een eigen regel */
+    margin-bottom: 8px; /* Ruimte tussen de titel en de tekst */
 }
 
-/* Inhoud van het kader */
-.template p {
-    margin: 0; /* Verwijder standaardmarges */
-    font-size: 1em; /* Standaard lettergrootte */
-    color: #555; /* Zachtgrijze kleur voor tekst */
-    line-height: 1.5; /* Betere leesbaarheid */
-}
