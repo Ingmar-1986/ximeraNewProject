@@ -1034,7 +1034,7 @@
   }
   
   .doelstelling::before {
-	content: "voorbeeld" attr(numbered) ".";
+	content: "doelstelling" attr(numbered) ".";
 	display: inline;
 	text-transform: capitalize; /* CSS here only applies to one word, like "Theorem." or "Example." */
 	font-weight: bold;
@@ -1045,3 +1045,27 @@
   .doelstelling ul {
 	padding-left: 1em;
   }
+
+  .doelstelling {
+	--pba: var(--exercise-background-perc);
+	--pbo: var(--exercise-border-perc);
+	--r: var(--example-red);
+	--g: var(--example-green);
+	--b: var(--example-blue);
+	
+	--background-color: rgb(
+		calc((1 - var(--pba)) * 255 + var(--pba) * var(--r)),
+		calc((1 - var(--pba)) * 255 + var(--pba) * var(--g)),
+		calc((1 - var(--pba)) * 255 + var(--pba) * var(--b))
+	);
+	
+	--border-color: rgb(
+		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--r)),
+		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--g)),
+		calc((1 - var(--pbo)) * 0 + var(--pbo) * var(--b))
+	);	
+	
+	background-color: var(--background-color);
+	border: 1px solid var(--border-color);
+	border-left: 12px solid var(--border-color);
+}
