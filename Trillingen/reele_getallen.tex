@@ -1,0 +1,134 @@
+\documentclass{ximera}
+\input{../Preamble_totaal}
+\addPrintStyle{..}
+
+
+
+\begin{document}
+\xmtitle{Getallenverzamelingen}
+
+\maketitle
+\begin{abstract}
+Leer de verschillende getallenverzamelingen kennen, zoals natuurlijke getallen, gehele getallen, rationale getallen, reële getallen, en complexe getallen. Ontdek hoe deze toegepast worden in gameontwikkeling en VFX.
+\end{abstract}
+\xmsection{Doelstelling}
+Na deze les kun je:
+\begin{itemize}
+    \item De verschillende getallenverzamelingen benoemen en hun eigenschappen uitleggen.
+    \item De notaties en relaties tussen de getallenverzamelingen begrijpen.
+    \item Toepassingen van getallenverzamelingen in gameontwikkeling en VFX herkennen.
+\end{itemize}
+
+\xmsection{Instapoefeningen}
+\begin{exercise}
+\begin{question}
+Welke soorten getallen ken je al? Schrijf er minstens drie op.
+\end{question}
+\begin{question}
+Vul in:
+\begin{itemize}
+    \item \( 0.5 \) is een \_\_\_ (heel getal, rationaal getal, etc.).
+    \item \( -3 \) is een \_\_\_.
+    \item \( \sqrt{2} \) is een \_\_\_.
+\end{itemize}
+\end{question}
+\begin{question}
+Waar gebruik je hele getallen in games? Geef een voorbeeld.
+\end{question}
+\end{exercise}
+
+\xmsection{Theorie}
+
+\xmsection*{Overzicht van de getallenverzamelingen}
+\begin{itemize}
+    \item \textbf{Natuurlijke getallen (\( \mathbb{N} \))}  
+    Positieve gehele getallen. Soms wordt \( 0 \) ook meegeteld.  
+    \textbf{Voorbeelden}: \( \{ 0, 1, 2, 3, ... \} \)  
+    \textbf{Toepassing}: Aantal levens in een game, levels die je kunt spelen.
+    
+    \item \textbf{Gehele getallen (\( \mathbb{Z} \))}  
+    Alle positieve en negatieve gehele getallen, inclusief \( 0 \).  
+    \textbf{Voorbeelden}: \( \{ ..., -3, -2, -1, 0, 1, 2, 3, ... \} \)  
+    \textbf{Toepassing}: Positie van een speler op een raster (\( x, y \)-coördinaten).
+    
+    \item \textbf{Rationale getallen (\( \mathbb{Q} \))}  
+    Getallen die geschreven kunnen worden als een breuk \( \frac{p}{q} \), waarbij \( p, q \in \mathbb{Z} \) en \( q \neq 0 \).  
+    \textbf{Voorbeelden}: \( \frac{1}{2}, -3.5, 0.333... \)  
+    \textbf{Toepassing}: Floating-point waarden zoals snelheid van een bewegend object.
+    
+    \item \textbf{Reële getallen (\( \mathbb{R} \))}  
+    Alle getallen op de getallenlijn, inclusief rationale én irrationale getallen.  
+    \textbf{Voorbeelden}: \( \sqrt{2}, \pi, -5, 0, 2.718 \)  
+    \textbf{Toepassing}: Fysica in games (projectielbanen, zwaartekracht).
+    
+    \item \textbf{Complexe getallen (\( \mathbb{C} \))}  
+    Getallen van de vorm \( a + bi \), waarbij \( i^2 = -1 \).  
+    \textbf{Voorbeelden}: \( 2 + 3i, -1 - i \)  
+    \textbf{Toepassing}: Gebruikt in grafische simulaties zoals Fouriertransformaties.
+\end{itemize}
+
+\xmsection*{Relaties tussen de verzamelingen}
+De verzamelingen zijn hiërarchisch:
+\[
+\mathbb{N} \subset \mathbb{Z} \subset \mathbb{Q} \subset \mathbb{R} \subset \mathbb{C}
+\]
+
+\xmsection{Visualisatie}
+Hier is een diagram dat de relatie tussen de verzamelingen weergeeft:
+
+\[
+\begin{array}{c}
+    \text{Complexe getallen (\( \mathbb{C} \))} \\
+    \uparrow \\
+    \text{Reële getallen (\( \mathbb{R} \))} \\
+    \uparrow \\
+    \text{Rationale getallen (\( \mathbb{Q} \))} \\
+    \uparrow \\
+    \text{Gehele getallen (\( \mathbb{Z} \))} \\
+    \uparrow \\
+    \text{Natuurlijke getallen (\( \mathbb{N} \))}
+\end{array}
+\]
+
+\xmsection{Oefeningen}
+\begin{exercise}
+\begin{question}
+Geef aan tot welke verzameling het getal behoort:
+\begin{itemize}
+    \item \( 5 \)
+    \item \( -2.75 \)
+    \item \( \sqrt{3} \)
+    \item \( 4 + 2i \)
+\end{itemize}
+\end{question}
+\end{exercise}
+
+\begin{exercise}
+\begin{question}
+Bereken \( \frac{3}{4} + \frac{2}{4} \). Is het resultaat een rationaal getal?
+\end{question}
+\end{exercise}
+
+\begin{exercise}
+\begin{question}
+In een game heeft een speler een \( x, y \)-positie in een 2D-wereld. Als \( x = -3 \) en \( y = 1.5 \), welke getallenverzamelingen beschrijven \( x \) en \( y \)?
+\end{question}
+\end{exercise}
+
+\begin{exercise}
+\begin{question}
+Kun je een irrationaal getal vinden dat belangrijk is in natuurkundige simulaties in games? Denk aan \( \pi \) of \( e \).
+\end{question}
+\end{exercise}
+
+\xmsection{Toepassing in gameontwikkeling}
+\begin{itemize}
+    \item \textbf{Pixel-coördinaten}: Meestal gehele getallen (\( \mathbb{Z} \)).
+    \item \textbf{Snelheid of zwaartekracht}: Meestal reële getallen (\( \mathbb{R} \)).
+    \item \textbf{Beweging in een cirkel}: Complexe getallen (\( \mathbb{C} \)) kunnen handig zijn bij het beschrijven van rotaties en oscillaties.
+\end{itemize}
+
+\xmsection{Afsluiting}
+Deze les heeft je laten zien hoe verschillende soorten getallen een rol spelen in zowel wiskunde als in de wereld van games en VFX. Je begrijpt nu de verzamelingen, hun eigenschappen, en hoe je ze kunt toepassen.
+
+\end{document}
