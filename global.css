@@ -2,7 +2,7 @@
 	/* definieer de kleuren */
 
 	--kleur_banner: #c3004a;
-	--kleur_bottom: #0e2432;
+	--kleur_donker: #0e2432;
 	--kleur_inhoud: #e3e3e3;
 
 	--definition-red: 0;
@@ -482,7 +482,7 @@
 	}
 	
 	.toc-search {
-		background-color: var(--kleur_inhoud); 
+		background-color: var(--kleur_banner); 
 	}
 
 
@@ -499,7 +499,7 @@
 	}
 
 	.toc {
-		background-color: var(--kleur_inhoud); 
+		background-color: var(--kleur_donker); 
 	}
 
 	.progress.xmprogresshidden	{
@@ -521,7 +521,7 @@
 
 	.main-inhoud .activity-title .title {
 		width: 100%;
-		background-color: var(--kleur_inhoud); 
+		background-color: var(--kleur_donker); 
 		color: white;
 		border: 1px solid;
 		border-radius: 8px;
@@ -575,7 +575,7 @@
 		position: relative;
 		display: flex;
 		flex-direction: column;
-		background-color: var(--kleur_inhoud); 
+		background-color: var(--kleur_donkerd); 
 		border: 1px solid #03A9F4;
 	  }
 	  
@@ -607,7 +607,7 @@
 	  .card-header {
 		padding: 0.75rem 1.25rem;
 		margin-bottom: 0;
-		bbackground-color: var(--kleur_inhoud); 
+		bbackground-color: var(--kleur_donker); 
 		border-bottom: 1px solid rgba(0, 0, 0, 0.125);
 	  }
 	  .card-footer {
@@ -929,11 +929,10 @@
 		display: flex; /* Zorg dat items flexibel zijn */
 		align-items: center; /* Centreer items verticaal */
 		margin-right: 0.25rem; /* Margineer aan de rechterkant */
-		background-color: green; /* Groene achtergrond */
+		background-color: var(--kleur_banner); 
 		padding: 0.5em 1em; /* Voeg padding toe */
 		color: white; /* Witte tekstkleur */
-		border-radius: 4px; /* Optioneel: afgeronde hoeken */
-		border: 1px solid darkgreen; /* Donkergroene rand */
+
 	  }
 	  
 	  .mr-1.topbar-items a {
@@ -978,7 +977,7 @@
 		padding: 0.75rem 1rem;
 		margin-bottom: 1rem;
 		list-style: none;
-		background-color: #f3f6f8;
+		background-color: var(--kleur_banner); 
 	  }
 	  .breadcrumb::after {
 		display: block;
