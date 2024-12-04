@@ -531,6 +531,13 @@
 		font-size: clamp(16px, 1.5vw, 24px);
 	}
 
+	.main-inhoud .toc-search {
+		grid-area: toc-head;
+		align-items: center;
+		display: flex;
+		background-color: var(--kleur_banner);
+	  }
+
 	.toc .part {
 		font-size: larger;
 		background-color: var(--kleur_banner); 
