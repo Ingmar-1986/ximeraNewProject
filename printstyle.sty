@@ -362,6 +362,7 @@
          \setcounter{warning}{0}
          \setcounter{xmuitweiding}{0}
          \setcounter{exercise}{0}
+         \setcounter{doelstelling}{0}
          \setcounter{question}{0}
          \setcounter{subsection}{0}
          \setcounter{subsubsection}{0}         
@@ -766,6 +767,30 @@
     breakable,
 }
 
+\newcounter{doelstelling} % Counter bestaat niet, dus zelf maken
+\makeatletter
+\let\doelstelling\relax
+\let\c@doelstelling\relax
+\let\enddoelstelling\relax
+\makeatother
+\newtheorem{doelstelling}{{\hyperlink{xm:doel:\thedoelstelling}{Doelstelling}\hypertarget{xm:doelsol:\thedoelstelling}{}}}
+%\renewcommand{\theexercise}{\arabic{exercise}} % titel instellen
+\renewcommand{\thedoelstelling}{\theoremtitle{doelstelling}} % titel instellen
+\tcolorboxenvironment{doelstelling}{
+    boxrule=0pt,
+    boxsep=0pt,
+    colback={\colorexample!0!white},
+    enhanced jigsaw,
+    borderline west={2pt}{0pt}{\colorexample!50!red},
+    sharp corners,
+    before skip=10pt,
+    after skip=10pt,
+    breakable,
+}
+
+
+
+
 \makeatletter
 \let\remark\relax
 \let\c@remark\relax
@@ -904,7 +929,7 @@
 \renewcommand{\theHexample}{\thetitlenumber.\theexample}   % for hyperref ...
 \renewcommand{\theHremark}{\thetitlenumber.\theremark}   % for hyperref ...
 \renewcommand{\theHsubsection}{\thetitlenumber.\thesubsection}   % for hyperref ...
-
+\renewcommand{\theHdoelstelling}{\thetitlenumber.\thedoelstelling}   % for hyperref ...
 
 
 \let\oldhypertarget\hypertarget

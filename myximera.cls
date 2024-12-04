@@ -472,6 +472,14 @@
 \problemEnvironmentEnd
 }
 
+\newenvironment{doelstelling}[1][2in]%
+{%Env start code
+\problemEnvironmentStart{#1}{Doelstelling}
+}
+{%Env end code
+\problemEnvironmentEnd
+}
+
 \newenvironment{exploration}[1][2in]%
 {%Env start code
 \problemEnvironmentStart{#1}{Exploration}
