@@ -1008,3 +1008,40 @@
 	  .breadcrumb-item.active {
 		color: #460f0f;
 	  }
+
+	  /* theoremEnvironments above is a list of lists. Get the correct list: */
+/*Nth from the list the name and color of the class*/
+.example {
+	background-color: #FDFDFD;
+	/* Take the color of the class, saturate it to a fixed value, and lighten it to a fixed value (see top of file) */
+	border: 1px solid hsl(60deg, 25%, 90%);
+	border-left: 12px solid hsl(60deg, 25%, 90%);
+	/*These are the things that are common to all environments. */
+	padding-left: 12px;
+	padding-right: 24px;
+	margin-top: 12pt;
+	padding-top: 6pt;
+	padding-bottom: 12pt;
+  }
+  
+  /* Various things get floated inside problem environments, and we don't want floats to float outside their containers */
+  .example::after {
+	content: ".";
+	visibility: hidden;
+	display: block;
+	height: 0;
+	clear: both;
+  }
+  
+  .example::before {
+	content: "voorbeeld" attr(numbered) ".";
+	display: inline;
+	text-transform: capitalize; /* CSS here only applies to one word, like "Theorem." or "Example." */
+	font-weight: bold;
+	padding-right: 0.5em;
+	font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  
+  .example ul {
+	padding-left: 1em;
+  }
