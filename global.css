@@ -485,28 +485,21 @@
 		background-color: var(--kleur_inhoud); 
 	}
 
-	.wrapper {
-		background-color: rgb(12, 12, 12); /* Felgroen */
-	}
-
-	.lds-ring {
-		background-color: rgb(6, 246, 34); /* Felgroen */
-	}
 
 	.xmsettings {
-		background-color: rgb(237, 49, 205); /* Felgroen */
+		background-color: var(--kleur_banner); 
 	}
 
 	.xmuser {
-		background-color: rgb(181, 234, 24); /* Felgroen */
+		background-color: var(--kleur_banner); 
 	}
 
 	.xmhelp {
-		background-color: rgb(12, 12, 12); /* Felgroen */
+		background-color: var(--kleur_banner); 
 	}
 
 	.toc {
-		background-color: rgb(252, 14, 14); /* Felgroen */
+		background-color: var(--kleur_inhoud); 
 	}
 
 	.progress.xmprogresshidden	{
@@ -520,7 +513,7 @@
 
 	.main-inhoud .activity-title {
   		grid-area: activity-head;
-  		background-color: #FFEB3B;
+  		background-color: var(--kleur_banner); 
   		width: 100%;
   		display: flex;
   		align-items: center;
