@@ -2,32 +2,74 @@
 \input{../Preamble_totaal}
 \addPrintStyle{..}
 
-
-
 \begin{document}
-\xmtitle{Opstap naar periodieke patronen - Ontdek goniometrische functies}
+    \author{Ingmar Herreman}
+    \date{December 2024}
+    \xmtitle{\wis{De wiskunde achter herhaling en beweging}}{Wat zijn goniometrische functies en waarom zijn ze belangrijk}
+    
+\begin{center}
+\begin{tikzpicture}[scale=1]
+    % Background rectangle
+    \draw[fill=kleur_banner!80,draw=kleur_banner,line width=0.5mm, rounded corners] (0,0) rectangle (15,3);
+    
 
-\xmsection{Wat zijn goniometrische functies?}
-Goniometrische functies, zoals sinus (
+    
+    % Decorative sinus wave
+    \begin{scope}
+        \clip (0,0) rectangle (15,3);
+        \draw[domain=0:15.6, smooth, variable=\x, blue, thick] 
+            plot ({\x},{1.5 + sin(\x r)});
+    \end{scope}
+    
+    % Decorative cosine wave
+    \begin{scope}
+        \clip (0,0) rectangle (15,3);
+        \draw[domain=0:15.6, smooth, variable=\x, green, thick] 
+            plot ({\x},{1.5 + cos(\x r)});
+    \end{scope}
 
+        % Title text
+    \node[color=white,align=center] at (7.5,2) {\Huge \textbf{Goniometrische functies}};
+    
+    % Subtitle text
+    \node[color=white,align=center] at (7.5,0.5) {\Large \textit{De wiskundige basis van herhaling en periodieke beweging}};
+\end{tikzpicture}
+\end{center}
 
-, worden gebruikt om herhalende patronen en bewegingen te beschrijven. Denk aan:
+\begin{center}
+\begin{tcolorbox}[colback=yellow!10, colframe=yellow!75!black, title=Voorkennis]
 \begin{itemize}
-    \item De golvende beweging van de zee.
-    \item Het heen en weer zwaaien van een slinger.
+    \item Je begrijpt hoe de goniometrische cirkel werkt en kunt sinus- en cosinuswaarden bepalen aan de hand van coördinaten.
+    \item Je kunt een grafiek analyseren en verbanden leggen tussen eigenschappen zoals symmetrie, nulwaarden, stijgende en dalende delen, en periodiciteit.
+\end{itemize}
+\end{tcolorbox}
+\end{center}
+
+
+
+\xmsection{Goniometrische functies - Een introductie}
+
+Goniometrische functies zoals \(\sin(x)\), \(\cos(x)\), en \(\tan(x)\) zijn krachtige wiskundige hulpmiddelen die patronen van herhaling beschrijven. Ze vormen de basis voor het begrijpen van periodieke verschijnselen die overal om ons heen te vinden zijn, zoals:
+\begin{itemize}
+    \item De beweging van een slinger in een klok.
+    \item De hoogte en regelmaat van golven in de oceaan.
     \item De wisseling van dag en nacht.
-    \item Ze vormen de wiskundige basis voor het begrijpen van periodieke verschijnselen.
+    \item Het gedrag van geluidsgolven en elektrische signalen.
+\end{itemize}
+Deze functies helpen ons niet alleen om dergelijke fenomenen te beschrijven en te modelleren, maar ook om er voorspellingen over te doen en ze beter te begrijpen. Ze spelen een cruciale rol in zowel theoretische als praktische toepassingen.
+
+\paragraph*{Achtergrond en Toepassingen} 
+Goniometrische functies hebben hun oorsprong in de meetkunde en astronomie. Eeuwen geleden werden ze ontwikkeld om de relatie tussen hoeken en lengtes in driehoeken te begrijpen. Sindsdien zijn ze geëvolueerd tot een fundamenteel onderdeel van de wiskunde en wetenschap, met brede toepassingen in onder andere:
+
+\begin{itemize}
+    \item \textbf{Natuurkunde}: Voor het modelleren van trillingen en golfbewegingen, zoals geluidsgolven en licht.
+    \item \textbf{Techniek}: Voor het ontwerpen van machines, bruggen en andere technische systemen.
+    \item \textbf{Astronomie}: Om de banen van planeten en sterren te berekenen.
+    \item \textbf{Informatica}: In computergraphics en signaalanalyse.
 \end{itemize}
 
-\begin{template}
-    \begin{enumerate}
-        \item De wiskundige definitie van goniometrische functies zoals sinus, cosinus, tangens, en cotangens.
-        \item De grafieken van deze functies:
-        - Hoe zien ze eruit?
-        - Hoe beschrijf je hun eigenschappen zoals amplitude, periode, en symmetrie?
-        \item Hoe gebruik je goniometrische functies om real-life problemen op te lossen, zoals het berekenen van een hoek in een driehoek of het modelleren van een golfbeweging.   
-    \end{enumerate}
- 
-\end{template}
+Dankzij goniometrische functies kunnen we complexe verschijnselen omzetten in eenvoudige, herhalende patronen. Hierdoor kunnen we ze beter analyseren, begrijpen, en toepassen in de praktijk.
+
+
 
 \end{document}

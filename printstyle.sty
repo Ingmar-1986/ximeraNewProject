@@ -15,6 +15,7 @@
 \ProcessOptions\relax
 
 \usepackage{stix}
+\usepackage{tcolorbox}
 \renewcommand{\familydefault}{\sfdefault}    % sans-serif by default
 
 % Alternative font: a version of Bitstream Vera% Sans.
@@ -28,6 +29,7 @@
 \usepackage{ccicons}
 %\usepackage{microtype}
 
+
 \usepackage[yyyymmdd,hhmmss]{datetime}    % for \currenttime
 %\usepackage{totpage}  % for LastPage  (ie Page n of M)
 
@@ -35,6 +37,8 @@
 
 \newcommand{\dfn}[1]{\textbf{#1}\index{#1}}
 
+\definecolor{kleur_banner}{HTML}{C3004A}
+\definecolor{kleur_inhoud}{HTML}{E3E3E3}
 %% Size of the page
 \usepackage[margin=.5in, includehead, includefoot, hmargin={.8in,.5in}, a4paper]{geometry}
 
@@ -88,50 +92,80 @@
 
 %
 % provide defaults for frontpage/headers/footers
-%
+
+
+
+% provide defaults for frontpage/headers/footers
+
+
+
 \providecommand{\xmmodulenaam}{Module}
-\providecommand{\xmcursusnaam}{Zomercursus Wiskunde}
-\providecommand{\xmlogo}{
-%    	\begin{minipage}[c]{2cm}\includegraphics[width=2cm]{./x_zomercursus/sedes.jpg}\end{minipage}
+\providecommand{\xmcursusnaam}{\begin{tabular}{cc}
+%\multirow{4}{*}{\includegraphics[width=2.5cm]{Logo_wisk_fys.png}} \\ & \\
+&\textbf{\Huge{WISKUNDE \& FYSICA}} \\ & \\
+\end{tabular}}
+
+\providecommand{\xmlogo}{ 
+   	%\vspace*{-4cm}\begin{minipage}[l]{2cm} \ \ \ \ \ \ \ \includegraphics[width=5cm]{logo_school}\end{minipage}
 }
-\providecommand{\xmorganisatienaam}{{\textsc{KU Leuven}}}
-\providecommand{\xmafdelingsnaam}{{\textsc{Groep Wetenschap \& Technologie}}}
-\providecommand{\xmcursusversie}{(\small{versie \today} \xmtoonprintopties)}
+
+\providecommand{\xmcover}
+{ 
+  % 	\begin{minipage}[l]{10cm} \ \ \ \ \ \ \ \includegraphics[width=10cm]{logo_school}\end{minipage}
+}
+\providecommand{\xmorganisatienaam}{{Campus Bellevue Izegem}}
+\providecommand{\xmafdelingsnaam}{{Ingmar Herreman}}
+\providecommand{\xmcursusversie}{\small{(versie \today} | \xmtoonprintopties\ )}
 
 \providecommand{\xmtoonprintopties}{
-	\ifhandout H\fi
-	\ifprintbasicversion B\fi
+	\ifhandout Handouts\fi
+	\ifprintbasicversion Basis\fi
 }
+
 
 
 \providecommand{\xmmodulenummer}{}   % print bv "Module xxx" op titelbladen
 \providecommand{\xmcopyright}{
-\doclicenseImage[imagewidth=2em]\doclicenseNameRef%\begin{minipage}[c]{1.1cm}\includegraphics[height=1.8cm]{./x_zomercursus/sedes.jpg}\end{minipage}
+
+    %\begin{minipage}[l]{1cm} \ \ \ \ \ \ \ \includegraphics[height=1cm]{logo_school.png}\end{minipage}
+    \hspace{2cm}\doclicenseImage[imagewidth=2em]\doclicenseNameRef 
 }
 
 % print een titelblad, globaal of per module (gebaseerd op bovenstaande parameters)
 \newcommand{\xmPrintFrontPage}[1]{
-    \thispagestyle{empty}    
-    \hrule
+    \thispagestyle{empty} 
+    \xmlogo  \\ \
+    \bigskip \bigskip
     \begin{center}
-    	{\large {\textsc{\xmcursusnaam}}}\\
-    	\bigskip
-        \xmlogo \\
-        \bigskip
-        \xmorganisatienaam\\
-    	\xmafdelingsnaam\\
-    	\bigskip\bigskip\bigskip
-    	{\large 
-         \xmmodulenummer
-         \bigskip 
-         \textsc{#1}\\
-        }
+    \xmcursusnaam \\ \ 
+    \bigskip \bigskip
+    \end{center}
+    
+    \begin{center}
+        \begin{tcolorbox}[colback=kleur_banner!80,colframe=blue!75!black, title=\begin{center}\Huge{\xmmodulenaam} \end{center}]
+        \begin{center}
+            \xmcover \\
+            \bigskip
+            \large 
+                \xmmodulenummer
+            \bigskip 
+            \huge{\textbf{{#1}}}
+        \end{center}
+        \end{tcolorbox}
+    \end{center}  
+
+      \bigskip\bigskip
+      \begin{center}
+        \Large{\textbf{\xmafdelingsnaam}}\\ \ \\
+        
+        \textbf{\large{\xmorganisatienaam}}\\
        	\bigskip
          \xmcursusversie
     	\bigskip    	
     \end{center}    
-    \hrule
-    \afterpage{\thispagestyle{firstpage}}         
+
+    \afterpage{\thispagestyle{firstpage}}   
+    \restoregeometry
     \newpage
     \pagestyle{otherpage}  
 }
@@ -140,7 +174,10 @@
 \usepackage{fancyhdr} % Nodig voor de 'fancy' hoofdingen
 \usepackage{extramarks}
 
-\renewcommand{\headrulewidth}{3pt}
+\renewcommand{\headrule}{
+    \vspace{-7pt} % Schuif de lijn omhoog
+    \color{kleur_banner}\rule{\textwidth + 0.2cm}{1pt} % Lijn met aangepaste kleur en dikte
+}
 
 \def\mymoduletitle{}   % will be set by \part
 
@@ -150,14 +187,14 @@
     \fancyhead{}  
     \fancyhead[RO]{\small{\textsc{p. \thepage}\rblob\\\ }}
     \fancyhead[LE]{\small{\textsc{p. \thepage}\lblob\\\ }}
-    \fancyhead[C]{\textsc{\firstleftmark}} 
+    \fancyhead[L]{\textsc{\rightmark}} 
     % Maak onderscheid tussen (volledige) xourses of (aparte) activities
     \ifdefined\isXourse  
        \fancyhead[LO,RE]{\small{\textsc{\xmmodulenaam\  \arabic{part}: \mymoduletitle}}\\
                          \ } 
     \fi
     
-    \fancyfoot[RO,LE]{\textsc{\small \xmcursusnaam\ \xmcursusversie\\\xmafdelingsnaam}}
+    \fancyfoot[RO,LE]{\textsc{\small \xmmodulenaamnaam\ (\today)\\\xmafdelingsnaam}}
     \fancyfoot[C]{}
     \fancyfoot[LO,RE]{\xmcopyright}
     
@@ -169,18 +206,18 @@
     \fancyhead[RO]{\small{\textsc{p. \thepage}\\\rbigblob}} % Rechts bij oneven pagina's
     \fancyhead[LE]{\small{\textsc{p. \thepage}\\\lbigblob}} % Links bij even pagina's
     \ifdefined\isXourse      
-        \fancyhead[LO]{\colorbox{blue!10}{\makebox[\textwidth][l]{\small{\textsc{\xmmodulenaam\  \arabic{part}: \mymoduletitle}}}}\\ \ }
-        \fancyhead[RE]{\colorbox{blue!10}{\makebox[\textwidth][r]{\small{\textsc{\xmmodulenaam\  \arabic{part}: \mymoduletitle}}}}\\ \ }
+        \fancyhead[LE]{\colorbox{kleur_banner!80}{\makebox[\textwidth][l]{\small{\textsc{\xmmodulenaam\  \arabic{part}: \mymoduletitle}}}}\\ \ }
+        \fancyhead[RO]{\colorbox{kleur_banner!80}{\makebox[\textwidth][r]{\small{\textsc{\xmmodulenaam\  \arabic{part}: \mymoduletitle}}}}\\ \ }
     \else
-        \fancyhead[LO]{\colorbox{blue!10}{\makebox[\textwidth][l]{\small{\textsc{\phantom{M}}}}}\\ \ }
-        \fancyhead[RE]{\colorbox{blue!10}{\makebox[\textwidth][r]{\small{\textsc{\phantom{M}}}}}\\ \ }
+        \fancyhead[LE]{\colorbox{kleur_banner!80}{\makebox[\textwidth][l]{\small{\textsc{\phantom{M}}}}}\\ \ }
+        \fancyhead[RO]{\colorbox{kleur_banner!80}{\makebox[\textwidth][r]{\small{\textsc{\phantom{M}}}}}\\ \ }
     \fi
 %   \fancyhead[C]{\ \\
 %   \colorbox{blue!10}{\makebox[\textwidth][c]{\selectfont\bfseries\color{blue}\rightmark}}} 
-    \fancyhead[C]{\ \\
-    \colorbox{blue!10}{\makebox[\textwidth][c]{\selectfont\bfseries\color{blue}\textsc{\firstleftmark}}}} 
+    \fancyhead[L]{\ \\
+    \colorbox{kleur_banner!80}{\makebox[\textwidth][l]{\selectfont\bfseries\color{kleur_inhoud}\textsc{\firstleftmark}}}} 
     
-    \fancyfoot[RO,LE]{\textsc{\small \xmcursusnaam\ \xmcursusversie\\\xmafdelingsnaam}}
+    \fancyfoot[RO,LE]{\textsc{\small \xmmodulenaam\ (\today)\\\xmafdelingsnaam}}
     \fancyfoot[C]{}
     \fancyfoot[LO,RE]{\xmcopyright}
     
@@ -193,7 +230,7 @@
 \ifdefined\isXourse   % enkel in xourse, niet bij individuele ximera
 \setlength{\unitlength}{18mm}
 %\newcommand{\blob}{\rule[-.2\unitlength]{1\unitlength}{.25\unitlength}}
-\newcommand{\blob}{{\color{gray}\rule{.5\unitlength}{.2\unitlength}}} 
+\newcommand{\blob}{{\color{green}\rule{.5\unitlength}{.2\unitlength}}} 
 \newcommand\rblob{
     \begin{picture}(0,0)
 %        \put(1,-\value{titlenumber}){\begin{sideways}\@title \thetitlenumber\end{sideways} \blob}
@@ -212,7 +249,7 @@
     \begin{picture}(0,0)
     \put(0,-0.2)
      {     % \framebox{\selectfont\bfseries\color{blue}\thetitlenumber}
-           \colorbox{blue!10}{\makebox(1,0.56){\selectfont\bfseries\color{blue}\thetitlenumber}}
+           \colorbox{purple}{\makebox(1,0.56){\selectfont\bfseries\color{blue}\thetitlenumber}}
      }
     \end{picture}
 }
@@ -220,7 +257,7 @@
     \begin{picture}(0,0)
     \put(-1.15,-0.2)
      {     % \framebox{\selectfont\bfseries\color{blue}\thetitlenumber}
-	     \colorbox{blue!10}{\makebox(1,0.56){\selectfont\bfseries\color{blue}\thetitlenumber}}
+	     \colorbox{purple}{\makebox(1,0.56){\selectfont\bfseries\color{blue}\thetitlenumber}}
      }
     \end{picture}
 }
@@ -361,8 +398,9 @@
          \setcounter{theorem}{0}
          \setcounter{warning}{0}
          \setcounter{xmuitweiding}{0}
+         \setcounter{xmuitweidingwet}{0}
+         \setcounter{xmuitweidingwis}{0}
          \setcounter{exercise}{0}
-         \setcounter{doelstelling}{0}
          \setcounter{question}{0}
          \setcounter{subsection}{0}
          \setcounter{subsubsection}{0}         
@@ -454,7 +492,7 @@
     
     \ifprintpartfrontpage
        % Toon titelpagina voor nieuw \part
-       \renewcommand{\xmmodulenummer}{\textsc{\xmmodulenaam\  \arabic{part}}\\}
+       \renewcommand{\xmmodulenummer}{\textbf{\xmmodulenaam\  \arabic{part}}\\}
        \xmPrintFrontPage{#1}
        \ifparttoc  % TODO: does not work ?
             % Toon INHOUDSOPGAVE 
@@ -745,6 +783,31 @@
 \newtheorem{problem}{Probleem}
 \renewcommand{\theproblem}{\theoremtitle{problem}} % titel instellen
 
+\makeatletter
+\let\template\relax
+\let\c@template\relax
+\let\endtemplate\relax
+\makeatother
+\newtheorem*{template}{}
+\renewcommand{\thetemplate}{\theoremtitle{template}} % titel instellen
+\tcolorboxenvironment{template}{
+    boxrule=1pt, % Dikke rand rondom het kader
+    boxsep=0pt, % Ruimte tussen de rand en de inhoud
+    colback={green!10}, % Lichte groene achtergrond voor de inhoud
+    colframe={green!50!black}, % Donkere kleur voor het kader
+    enhanced jigsaw,
+    rounded corners=20pt, % Sterk afgeronde hoeken
+    before skip=2pt,
+    after skip=2pt,
+    breakable, % Box kan over pagina's breken
+    title=Doelstelling, % Titel van het kader
+    coltitle=black, % Zwarte kleur voor de titeltekst
+    colbacktitle=white, % Witte achtergrond voor de titel
+    fonttitle=\bfseries, % Vetgedrukte titeltekst
+    attach title to upper=\quad, % Titel aan de bovenrand van de box
+    titlerule=0pt, % Geen lijn onder de titel
+    titlerule color=green!75!black % Kleur van eventuele lijnen onder de titel
+}
 % exercise environment instellen
 \newcounter{exercise} % Counter bestaat niet, dus zelf maken
 \makeatletter
@@ -766,29 +829,6 @@
     after skip=10pt,
     breakable,
 }
-
-\newcounter{doelstelling} % Counter bestaat niet, dus zelf maken
-\makeatletter
-\let\doelstelling\relax
-\let\c@doelstelling\relax
-\let\enddoelstelling\relax
-\makeatother
-\newtheorem{doelstelling}{Doelstelling}
-\renewcommand{\thedoelstelling}{\theoremtitle{doelstelling}} % titel instellen
-\tcolorboxenvironment{doelstelling}{
-    boxrule=0pt,
-    boxsep=0pt,
-    colback={\colorexample!0!white},
-    enhanced jigsaw,
-    borderline west={2pt}{0pt}{\colorexample!50!red},
-    sharp corners,
-    before skip=10pt,
-    after skip=10pt,
-    breakable,
-}
-
-
-
 
 \makeatletter
 \let\remark\relax
@@ -852,7 +892,7 @@
 \ifdefined\isXourse
    \ifdefined\xmuitweiding
    \else
-       \def\xmnouitweiding{true}
+       \def\xmnouitweiding{false}
    \fi
 \fi
 
@@ -866,7 +906,7 @@
 \let\c@xmuitweiding\@undefined % nodig want anders klaagt hij dat \c@xmuitweiding al gedefinieerd is, \@undefined is gewoon een macro die niet gedefinieerd is, je kan eender welke macro gebruiken die niet gedefinieerd is
 \makeatother
 \newtheorem{xmuitweiding}{Uitweiding}
-\renewcommand{\thexmuitweiding}{\theoremtitle{xmuitweiding}} % titel instellen
+\renewcommand{\thexmuitweiding}{ \theoremtitle{xmuitweiding}} % titel instellen
 \tcolorboxenvironment{xmuitweiding}{
     boxrule=0pt,
     boxsep=0pt,
@@ -928,7 +968,7 @@
 \renewcommand{\theHexample}{\thetitlenumber.\theexample}   % for hyperref ...
 \renewcommand{\theHremark}{\thetitlenumber.\theremark}   % for hyperref ...
 \renewcommand{\theHsubsection}{\thetitlenumber.\thesubsection}   % for hyperref ...
-\renewcommand{\theHdoelstelling}{\thetitlenumber.\thedoelstelling}   % for hyperref ...
+
 
 
 \let\oldhypertarget\hypertarget
@@ -1055,4 +1095,58 @@
   \let\@ifnextchar\new@ifnextchar
     \array{*\c@MaxMatrixCols #1}}
     \makeatother
+
+%---- Toevoegd door mij
+
+%uitbreiding wetenschappen
+
+\ifdefined\xmuitweidingwet
+\makeatletter
+\let\xmuitweidingwet\relax
+\let\c@\xmuitweidingwet\relax
+\let\endxmuitweidingwet\relax
+\let\c@xmuitweidingwet\@undefined % nodig want anders klaagt hij dat \c@xmuitweiding al gedefinieerd is, \@undefined is gewoon een macro die niet gedefinieerd is, je kan eender welke macro gebruiken die niet gedefinieerd is
+\makeatother
+\newtheorem{xmuitweidingwet}{Uitbreiding wetenschappen}
+\renewcommand{\thexmuitweiding}{ \theoremtitle{xmuitweidingwet}} % titel instellen
+\tcolorboxenvironment{xmuitweidingwet}{
+    boxrule=0pt,
+    title={{\color{kleur_banner}{\Large{\faIcon{microscope} WET}}}},
+    colbacktitle=teal!50,
+    boxsep=0pt,
+    colback={teal!2!white},
+    enhanced jigsaw,
+    borderline={2pt}{0pt}{teal},
+    sharp corners,
+    before skip=10pt,
+    after skip=10pt,
+    breakable,
+}
+
+%uitbreiding wiskunde
+\ifdefined\xmuitweidingwis
+\makeatletter
+\let\xmuitweidingwis\relax
+\let\c@\xmuitweidingwis\relax
+\let\endxmuitweidingwis\relax
+\let\c@xmuitweidingwis\@undefined % nodig want anders klaagt hij dat \c@xmuitweiding al gedefinieerd is, \@undefined is gewoon een macro die niet gedefinieerd is, je kan eender welke macro gebruiken die niet gedefinieerd is
+\makeatother
+\newtheorem{xmuitweidingwis}{Uitbreiding wiskunde}
+\renewcommand{\thexmuitweiding}{ \theoremtitle{xmuitweidingwis}} % titel instellen
+\tcolorboxenvironment{xmuitweidingwis}{
+    boxrule=0pt,
+    title={\color{red}{\Large{\faIcon{infinity} WIS}}},
+    colbacktitle=violet!50,
+    boxsep=0pt,
+    colback={violet!2!white},
+    enhanced jigsaw,
+    borderline={2pt}{0pt}{violet},
+    sharp corners,
+    before skip=10pt,
+    after skip=10pt,
+    breakable,
+}
+\fi
+
+
 
