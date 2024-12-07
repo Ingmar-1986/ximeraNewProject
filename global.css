@@ -1043,7 +1043,7 @@
     box-sizing: border-box; /* Inclusief de rand bij breedte */
 }
 
-.template1 {
+.problem {
     background-color: #ffe5e5; /* Lichte rode achtergrond (red!10) */
     border: 3px solid #ff6666; /* Rode rand (red!75!black) */
     border-radius: 5px; /* Subtiele afgeronde hoeken */
@@ -1054,7 +1054,7 @@
 }
 
 /* Titelbalk */
-.template1::before {
+.problem::before {
     content: "DOELSTELLING"; /* Titeltekst */
     font-size: 1em; /* Titelgrootte */
     font-weight: bold; /* Vetgedrukt voor de titel */

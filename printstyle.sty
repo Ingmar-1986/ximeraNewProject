@@ -782,8 +782,21 @@
 \let\endproblem\relax
 \makeatother
 % problem environment is een standaard theorem
-\newtheorem{problem}{Probleem}
+\newtheorem*{problem}{}
 \renewcommand{\theproblem}{\theoremtitle{problem}} % titel instellen
+\tcolorboxenvironment{problem}{
+    colback=yellow!10, % kleur achtergrond voor de inhoud
+    colframe=yellow!75!black, % Donkere kleur voor de rand
+    title=Voorkennis, % Standaard titeltekst
+    coltitle=white, % kleur voor de titeltekst
+    fonttitle=\bfseries, % Vetgedrukte titeltekst
+    boxrule=1pt, % Dikte van de rand
+    boxsep=4pt, % Ruimte tussen rand en inhoud
+    enhanced, % Maakt meer stijlaanpassingen mogelijk
+    rounded corners=2pt, % Subtiele afgeronde hoeken
+    before skip=5pt, % Ruimte vóór de box
+    after skip=1pt % Ruimte na de box
+}
 
 \makeatletter
 \let\template\relax
@@ -791,7 +804,7 @@
 \let\endtemplate\relax
 \makeatother
 \newtheorem*{template}{}
-\newtheorem*{template*}{}
+
 \renewcommand{\thetemplate}{\theoremtitle{template}} % titel instellen
 \tcolorboxenvironment{template}{
     colback=red!10, % kleur achtergrond voor de inhoud
@@ -806,19 +819,7 @@
     before skip=5pt, % Ruimte vóór de box
     after skip=1pt % Ruimte na de box
 }
-\tcolorboxenvironment{template*}{
-    colback=yellow!10, % kleur achtergrond voor de inhoud
-    colframe=yellow!75!black, % Donkere kleur voor de rand
-    title=Voorkennis, % Standaard titeltekst
-    coltitle=white, % kleur voor de titeltekst
-    fonttitle=\bfseries, % Vetgedrukte titeltekst
-    boxrule=1pt, % Dikte van de rand
-    boxsep=4pt, % Ruimte tussen rand en inhoud
-    enhanced, % Maakt meer stijlaanpassingen mogelijk
-    rounded corners=2pt, % Subtiele afgeronde hoeken
-    before skip=5pt, % Ruimte vóór de box
-    after skip=1pt % Ruimte na de box
-}
+
 
 
 % exercise environment instellen
