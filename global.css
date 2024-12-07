@@ -1044,8 +1044,8 @@
 }
 
 .problem {
-    background-color: #FFFDE5 /* Lichte gele achtergrond (red!10) */
-    border: 3px solid #BFBF40; /* Gele rand  */
+    background-color: #FFFDE5; /* Lichte gele achtergrond (red!10) */
+    border: 3px solid  #bfbf40; /* Gele rand  */
     border-radius: 5px; /* Subtiele afgeronde hoeken */
     padding: 12px; /* Ruimte rondom de inhoud */
     margin-top: 12px; /* Ruimte boven elk kader */
