@@ -1030,16 +1030,18 @@
 
 /* Titelbalk */
 .template::before {
-    content: "Voorkennis"; /* Titeltekst */
+    content: "DOELSTELLING"; /* Titeltekst */
     font-size: 1em; /* Titelgrootte */
     font-weight: bold; /* Vetgedrukt voor de titel */
     color: #000; /* Zwarte kleur voor de tekst */
     display: block; /* Titel op een aparte regel */
-    background-color: #ffcccc; /* Donkerdere rode achtergrond (red!20) */
-    padding: 4px 8px; /* Ruimte binnen de titelbalk */
-    border-radius: 3px; /* Lichte afronding op de titelbalk */
-    margin-bottom: 8px; /* Ruimte tussen de titel en de inhoud */
+    background-color: #ff6666; /*  */
+    border-radius: 5px 5px 0 0; /* Zelfde afronding als de bovenrand van de box */
+    padding: 8px; /* Ruimte binnen de titel */
+    margin: -15px -15px 8px -15px; /* Zorgt ervoor dat de titel aansluit op de rand */
     text-align: left; /* Titel uitgelijnd naar links */
+    box-sizing: border-box; /* Inclusief de rand bij breedte */
 }
+
 
 
