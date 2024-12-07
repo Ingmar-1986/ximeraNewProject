@@ -1019,21 +1019,27 @@
 /*Nth from the list the name and color of the class*/
 
 .template {
-    background-color: #d3edd4; /* Lichtgroene achtergrond */
-    border: 3px solid #5cb85c; /* Groene rand */
-    border-radius: 8px; /* Afgeronde hoeken */
-    padding: 0px 12px 0px; /* Extra ruimte boven voor de titel */
+    background-color: #ffe5e5; /* Lichte rode achtergrond (red!10) */
+    border: 3px solid #ff6666; /* Rode rand (red!75!black) */
+    border-radius: 5px; /* Subtiele afgeronde hoeken */
+    padding: 12px; /* Ruimte rondom de inhoud */
     margin-top: 12px; /* Ruimte boven elk kader */
     position: relative; /* Nodig voor pseudo-elementen */
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtiele schaduw */
 }
 
-/* Titelbalk (met pseudo-elementen voor titel en icoon) */
+/* Titelbalk */
 .template::before {
-    content: "doelstelling"; /* Icoon + tekst (Font Awesome symbool) */
-    font-size: 1em; /* Grotere tekst */
-    color: #000; 
-    display: block; /* Plaats de titel op een eigen regel */
-    margin-bottom: 4px; /* Ruimte tussen de titel en de tekst */
+    content: "Voorkennis"; /* Titeltekst */
+    font-size: 1em; /* Titelgrootte */
+    font-weight: bold; /* Vetgedrukt voor de titel */
+    color: #000; /* Zwarte kleur voor de tekst */
+    display: block; /* Titel op een aparte regel */
+    background-color: #ffcccc; /* Donkerdere rode achtergrond (red!20) */
+    padding: 4px 8px; /* Ruimte binnen de titelbalk */
+    border-radius: 3px; /* Lichte afronding op de titelbalk */
+    margin-bottom: 8px; /* Ruimte tussen de titel en de inhoud */
+    text-align: left; /* Titel uitgelijnd naar links */
 }
+
 
