@@ -621,7 +621,7 @@
 	  }
 	  .card-footer {
 		padding: 0.75rem 1.25rem;
-		background-color: grey); 
+		background-color: grey; 
 		border-top: 1px solid rgba(0, 0, 0, 0.125);
 	  }
 	  .card-header-tabs {
@@ -1044,7 +1044,7 @@
 }
 
 .problem {
-    background-color: #FFFDE5; /* Lichte gele achtergrond (red!10) */
+    background-color: #fffde5; /* Lichte gele achtergrond (red!10) */
     border: 3px solid  #bfbf40; /* Gele rand  */
     border-radius: 5px; /* Subtiele afgeronde hoeken */
     padding: 12px; /* Ruimte rondom de inhoud */
@@ -1055,12 +1055,12 @@
 
 /* Titelbalk */
 .problem::before {
-    content: "Voorkennis"; /* Titeltekst */
+    content: "voorkennis"; /* Titeltekst */
     font-size: 1em; /* Titelgrootte */
     font-weight: bold; /* Vetgedrukt voor de titel */
     color: #000; /* Zwarte kleur voor de tekst */
     display: block; /* Titel op een aparte regel */
-    background-color: #FFFDE5; /*  */
+    background-color: #fffde5; /*  */
     border-radius: 5px 5px 0 0; /* Zelfde afronding als de bovenrand van de box */
     padding: 8px; /* Ruimte binnen de titel */
     margin: -15px -15px 8px -15px; /* Zorgt ervoor dat de titel aansluit op de rand */
