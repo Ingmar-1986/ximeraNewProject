@@ -37,6 +37,9 @@
 
 \newcommand{\dfn}[1]{\textbf{#1}\index{#1}}
 
+\definecolor{kleur_banner}{HTML}{C3004A}
+\definecolor{kleur_inhoud}{HTML}{E3E3E3}
+
 
 %% Size of the page
 \usepackage[margin=.5in, includehead, includefoot, hmargin={.8in,.5in}, a4paper]{geometry}
@@ -100,17 +103,17 @@
 
 \providecommand{\xmmodulenaam}{Module}
 \providecommand{\xmcursusnaam}{\begin{tabular}{cc}
-%\multirow{4}{*}{\includegraphics[width=2.5cm]{Logo_wisk_fys.png}} \\ & \\
+\multirow{4}{*}{\includegraphics[width=2.5cm]{Logo_wisk_fys.png}} \\ & \\
 &\textbf{\Huge{WISKUNDE \& FYSICA}} \\ & \\
 \end{tabular}}
 
 \providecommand{\xmlogo}{ 
-   	%\vspace*{-4cm}\begin{minipage}[l]{2cm} \ \ \ \ \ \ \ \includegraphics[width=5cm]{logo_school}\end{minipage}
+   	\vspace*{-4cm}\begin{minipage}[l]{2cm} \ \ \ \ \ \ \ \includegraphics[width=5cm]{logo_school}\end{minipage}
 }
 
 \providecommand{\xmcover}
 { 
-  % 	\begin{minipage}[l]{10cm} \ \ \ \ \ \ \ \includegraphics[width=10cm]{logo_school}\end{minipage}
+   	\begin{minipage}[l]{10cm} \ \ \ \ \ \ \ \includegraphics[width=10cm]{logo_school}\end{minipage}
 }
 \providecommand{\xmorganisatienaam}{{Campus Bellevue Izegem}}
 \providecommand{\xmafdelingsnaam}{{Ingmar Herreman}}
@@ -126,7 +129,7 @@
 \providecommand{\xmmodulenummer}{}   % print bv "Module xxx" op titelbladen
 \providecommand{\xmcopyright}{
 
-    %\begin{minipage}[l]{1cm} \ \ \ \ \ \ \ \includegraphics[height=1cm]{logo_school.png}\end{minipage}
+    \begin{minipage}[l]{1cm} \ \ \ \ \ \ \ \includegraphics[height=1cm]{logo_school.png}\end{minipage}
     \hspace{2cm}\doclicenseImage[imagewidth=2em]\doclicenseNameRef 
 }
 
@@ -788,25 +791,36 @@
 \let\endtemplate\relax
 \makeatother
 \newtheorem*{template}{}
+\newtheorem*{template*}{}
 \renewcommand{\thetemplate}{\theoremtitle{template}} % titel instellen
 \tcolorboxenvironment{template}{
-    boxrule=1pt, % Dikke rand rondom het kader
-    boxsep=0pt, % Ruimte tussen de rand en de inhoud
-    colback={green!10}, % Lichte groene achtergrond voor de inhoud
-    colframe={green!50!black}, % Donkere kleur voor het kader
-    enhanced jigsaw,
-    rounded corners=20pt, % Sterk afgeronde hoeken
-    before skip=2pt,
-    after skip=2pt,
-    breakable, % Box kan over pagina's breken
-    title=Doelstelling, % Titel van het kader
-    coltitle=black, % Zwarte kleur voor de titeltekst
-    colbacktitle=white, % Witte achtergrond voor de titel
+    colback=red!10, % kleur achtergrond voor de inhoud
+    colframe=red!75!black, % Donkere kleur voor de rand
+    title=DOELSTELLINGEN, % Standaard titeltekst
+    coltitle=white, % kleur voor de titeltekst
     fonttitle=\bfseries, % Vetgedrukte titeltekst
-    attach title to upper=\quad, % Titel aan de bovenrand van de box
-    titlerule=0pt, % Geen lijn onder de titel
-    titlerule color=green!75!black % Kleur van eventuele lijnen onder de titel
+    boxrule=1pt, % Dikte van de rand
+    boxsep=4pt, % Ruimte tussen rand en inhoud
+    enhanced, % Maakt meer stijlaanpassingen mogelijk
+    rounded corners=2pt, % Subtiele afgeronde hoeken
+    before skip=5pt, % Ruimte vóór de box
+    after skip=1pt % Ruimte na de box
 }
+\tcolorboxenvironment{template*}{
+    colback=yellow!10, % kleur achtergrond voor de inhoud
+    colframe=yellow!75!black, % Donkere kleur voor de rand
+    title=Voorkennis, % Standaard titeltekst
+    coltitle=white, % kleur voor de titeltekst
+    fonttitle=\bfseries, % Vetgedrukte titeltekst
+    boxrule=1pt, % Dikte van de rand
+    boxsep=4pt, % Ruimte tussen rand en inhoud
+    enhanced, % Maakt meer stijlaanpassingen mogelijk
+    rounded corners=2pt, % Subtiele afgeronde hoeken
+    before skip=5pt, % Ruimte vóór de box
+    after skip=1pt % Ruimte na de box
+}
+
+
 % exercise environment instellen
 \newcounter{exercise} % Counter bestaat niet, dus zelf maken
 \makeatletter
@@ -1146,6 +1160,5 @@
     breakable,
 }
 \fi
-
 
 
