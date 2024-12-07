@@ -1055,7 +1055,7 @@
 
 /* Titelbalk */
 .problem::before {
-    content: "voorkennis"; /* Titeltekst */
+    content: "voor"; /* Titeltekst */
     font-size: 1em; /* Titelgrootte */
     font-weight: bold; /* Vetgedrukt voor de titel */
     color: #000; /* Zwarte kleur voor de tekst */
